@@ -1,9 +1,16 @@
 import { Outlet, Link } from "react-router-dom";
+import { useState } from "react";
+import Burgermenu from "./Burgermenu";
 
 export default function Navigation() {
+  const [hamburgerOpen, setHamburgerOpen] = useState(false);
+
+  const toggleHamburger = () => {
+    setHamburgerOpen(!hamburgerOpen);
+  };
   return (
     <>
-      <nav>
+      <nav className="navigation">
         <ul>
           <li>
             <Link to="/shop">Shop</Link>
@@ -21,19 +28,25 @@ export default function Navigation() {
             <Link to="/about">Om os</Link>
           </li>
         </ul>
+        <div className="burgermenu" onClick={toggleHamburger}>
+          <Burgermenu isOpen={hamburgerOpen} />
+        </div>
       </nav>
 
       <Outlet></Outlet>
-    </>
 
-    // <BrowserRouter>
-    //   <Routes>
-    //     <Route path="/" element={<Layout />}>
-    //       <Route index element={<Frontpage />} />
-    //       <Route path="about" element={<About />} />
-    //       <Route path="collections" element={<Collections />} />
-    //     </Route>
-    //   </Routes>
-    // </BrowserRouter>
+      <style jsx>
+        {`
+          .navigation ul {
+            display: ${hamburgerOpen ? "inline" : "none"};
+            background-color: blue;
+            height: 100vh;
+            width: 50vw;
+            margin-top: 50px;
+            position: absolute;
+          }
+        `}
+      </style>
+    </>
   );
 }
