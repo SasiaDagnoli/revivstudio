@@ -1,0 +1,11 @@
+$background-color: #e4dad1;
+$font-color: #473832;
+$secondary-color: #c3b3ae;
+
+body{
+    background-color: $background-color;
+}
+
+h1, h2, h3, h4, h5, p, a, button{
+    color: $font-color;
+}

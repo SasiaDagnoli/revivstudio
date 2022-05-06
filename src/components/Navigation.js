@@ -19,7 +19,9 @@ export default function Navigation() {
             <Link to="/collections">Kollektioner</Link>
           </li>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">
+              <img src={`./images/logo_reviv.svg`} alt="logo" className="logo" />
+            </Link>
           </li>
           <li>
             <Link to="/upcycling">Upcycling</Link>
@@ -39,11 +41,23 @@ export default function Navigation() {
         {`
           .navigation ul {
             display: ${hamburgerOpen ? "inline" : "none"};
-            background-color: blue;
             height: 100vh;
             width: 50vw;
             margin-top: 50px;
             position: absolute;
+            list-style-type: none;
+          }
+
+          @media (min-width: 800px) {
+            .navigation {
+            }
+            .navigation ul {
+              display: flex;
+              justify-content: space-evenly;
+              width: 100%;
+              height: 50px;
+              position: unset;
+            }
           }
         `}
       </style>
