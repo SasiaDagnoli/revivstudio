@@ -1,0 +1,21 @@
+$main-font: futura-pt, sans-serif;
+
+h1, h2, h3, a{
+    font-weight: 500;
+    font: $main-font;
+    font-style: normal;
+}
+
+h1{
+    font-size: 4.5rem;
+    text-align: center;
+}
+
+p{
+    font-weight: 400;
+    font: $main-font;
+    font-style: normal;
+}
+
+
+
