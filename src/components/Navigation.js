@@ -20,7 +20,11 @@ export default function Navigation() {
           </li>
           <li>
             <Link to="/">
-              <img src={`./images/logo_reviv.svg`} alt="logo" className="logo" />
+              <img
+                src={`./images/logo_reviv.svg`}
+                alt="logo"
+                className="logo"
+              />
             </Link>
           </li>
           <li>
@@ -49,14 +53,13 @@ export default function Navigation() {
           }
 
           @media (min-width: 800px) {
-            .navigation {
-            }
             .navigation ul {
               display: flex;
-              justify-content: space-evenly;
-              width: 100%;
+              justify-content: center;
+              gap: 120px;
+              width: 95%;
               height: 50px;
-              position: unset;
+              //position: unset;
             }
           }
         `}

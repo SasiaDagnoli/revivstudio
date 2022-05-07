@@ -1,8 +1,11 @@
-$main-font: futura-pt, sans-serif;
+
+
+//$main-font: futura-pt, sans-serif;
 
 h1, h2, h3, a{
     font-weight: 500;
-    font: $main-font;
+    //font: $main-font;
+    font-family: futura-pt, sans-serif;
     font-style: normal;
 }
 
@@ -11,10 +14,19 @@ h1{
     text-align: center;
 }
 
-p{
+p {
     font-weight: 400;
-    font: $main-font;
+    font-family: futura-pt, sans-serif;
     font-style: normal;
+}
+
+.navigation {
+    li {
+        font-size: 1.5rem;
+    }
+    a {
+        font-weight: 400;
+    }
 }
 
 
