@@ -64,6 +64,11 @@ export default function Frontpage() {
       </section>
       <section>
         <h1>Aflever dine smykker</h1>
+        <img
+          className="customerjourney"
+          src={`./images/kunderejse.png`}
+          alt=""
+        />
       </section>
     </div>
   );

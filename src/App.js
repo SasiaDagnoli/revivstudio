@@ -7,6 +7,7 @@ import Collections from "./components/Collections";
 import Frontpage from "./components/Frontpage";
 import Upcycling from "./components/Upcycling";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       {/* Navigation done */}
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,35 @@
+footer {
+    background-color: #473832;
+
+    .footer-main {
+    display: flex;
+    justify-content: space-evenly;
+    }
+
+    h2, p, label {
+    color: #E4DAD1;
+    }
+
+    ::placeholder {
+        color: #E4DAD1;
+    }
+
+    input[type=email] {
+        font-size: 1.2rem;
+        border: none;
+        background-color: transparent;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    hr {
+        width: 100%;
+        background-color: #E4DAD1;
+    }
+
+    input[type=checkbox] {
+        outline: solid 2px #E4DAD1;
+    }
+}
