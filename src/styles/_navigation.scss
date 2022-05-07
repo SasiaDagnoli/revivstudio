@@ -6,6 +6,10 @@
     flex-flow: column nowrap;
     z-index: 10;
   }
+
+  nav {
+    position: absolute;
+  }
   
   .burger {
     width: 2rem;
@@ -30,6 +34,10 @@
     
   .burgermenu {
     display: none;
+  }
+
+  nav {
+    position: unset;
   }
 
   .navigation {

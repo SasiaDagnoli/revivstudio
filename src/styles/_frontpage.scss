@@ -1,8 +1,8 @@
-.background-image{
-    width: 100%;
-    position: relative;
-    z-index: -2;
-}
+// .background-image{
+//     width: 100%;
+//     position: relative;
+//     z-index: -2;
+// }
 
 .swiper img {
     width: 100%;
@@ -10,4 +10,22 @@
 
 .customerjourney {
     width: 100%;
+}
+
+#first-section {
+    background-image: url(../../public/images/placeholder_background.jpg);
+    height: 100vh;
+    background-size: cover;
+
+    button {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        margin: 100px;
+        border: none;
+        background-color: #C3B3AE;
+        padding: 15px;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
 }

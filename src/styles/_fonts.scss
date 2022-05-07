@@ -14,13 +14,7 @@ h1 {
     text-align: center;
 }
 
-p {
-    font-weight: 400;
-    font-family: futura-pt, sans-serif;
-    font-style: normal;
-}
-
-::placeholder, label {
+p, ::placeholder, label, button {
     font-weight: 400;
     font-family: futura-pt, sans-serif;
     font-style: normal;
