@@ -17,7 +17,17 @@ export default function Frontpage() {
       <section>
         <h1>Populære produkter</h1>
         <Swiper
-          slidesPerView={3.8}
+          breakpoints={{
+            640: {
+              width: 640,
+              slidesPerView: 1,
+            },
+            768: {
+              width: 768,
+              slidesPerView: 2.1,
+            },
+          }}
+          slidesPerView={1}
           spaceBetween={30}
           pagination={{
             el: ".custom-pagination",
