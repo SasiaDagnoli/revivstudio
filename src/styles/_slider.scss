@@ -1,0 +1,14 @@
+.swiper-pagination-bullet {
+    background: #C3B3AE !important;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    color: #C3B3AE !important;
+}
+
+.custom-pagination {
+    text-align: center;
+    transition: .3s opacity;
+    transform: translate3d(0,0,0);
+    z-index: 10;
+}
