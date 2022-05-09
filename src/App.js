@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.scss";
 import Navigation from "./components/Navigation";
 import Shop from "./components/Shop";
@@ -10,6 +10,21 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 
 function App() {
+  const [page, setProducts] = useState([]);
+
+  useEffect(() => {
+    console.log("GetTheData");
+
+    const getTheData = async () => {
+      const res = await fetch("https://revivstudio-8a0a.restdb.io/rest/shop", {
+        headers: { "cache-control": "no-cache", "x-apikey": "62741849e8128861fcf3d098" },
+      });
+      const data = await res.json();
+      console.log(data);
+    };
+    getTheData();
+  });
+
   return (
     <div className="App" id="outer-container">
       {/* Navigation  */}
