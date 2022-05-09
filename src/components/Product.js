@@ -1,9 +1,10 @@
 export default function Product(props) {
-  const medieUrl = "https://revivstudio-8a0a.restdb.io/media/";
+  const mediaUrl = "https://revivstudio-8a0a.restdb.io/media/";
   return (
     <article className="product">
-      <img src={medieUrl + props.product.image[0]} alt={props.product.productname} />
+      <img src={mediaUrl + props.product.image[0]} alt={props.product.productname} style={{ width: "40%", height: "auto" }} />
       <h2>{props.product.productname}</h2>
+      <p>{props.product.price} KR.</p>
     </article>
   );
 }
