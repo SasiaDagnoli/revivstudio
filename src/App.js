@@ -10,7 +10,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 
 function App() {
-  const [page, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     console.log("GetTheData");
@@ -20,10 +20,27 @@ function App() {
         headers: { "cache-control": "no-cache", "x-apikey": "62741849e8128861fcf3d098" },
       });
       const data = await res.json();
-      console.log(data);
+      const popularArray = [];
+      const exploreArray = [];
+      console.log("data", data);
+
+      data.forEach((product) => {
+        if (product.popular === true) {
+          popularArray.push(product);
+        }
+      });
+      console.log("popular", popularArray);
+
+      data.forEach((product) => {
+        if (product.explore === true) {
+          exploreArray.push(product);
+        }
+      });
+      console.log("explore", exploreArray);
+      setProducts(data);
     };
     getTheData();
-  });
+  }, []);
 
   return (
     <div className="App" id="outer-container">
@@ -40,6 +57,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       {/* Navigation done */}
+      <Shop product={products}></Shop>
       <Footer />
     </div>
   );

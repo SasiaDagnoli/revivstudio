@@ -1,3 +1,10 @@
-export default function Shop() {
-  return <h1>Alle smykker</h1>;
+import Productlist from "./Productlist";
+
+export default function Shop(props) {
+  console.log(props);
+  return (
+    <div className="Shop">
+      <Productlist products={props.product}></Productlist>
+    </div>
+  );
 }
