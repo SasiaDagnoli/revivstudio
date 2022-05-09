@@ -4,7 +4,8 @@ export default function Shop(props) {
   console.log(props);
   return (
     <div className="Shop">
-      <Productlist products={props.product}></Productlist>
+      <h1>shop</h1>
+      {/* <Productlist products={props.product}></Productlist> */}
     </div>
   );
 }

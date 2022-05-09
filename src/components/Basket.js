@@ -5,7 +5,7 @@ import ProductBasket from "./ProductBasket";
 
 export default (props) => {
   return (
-    <Basket right>
+    <Basket className="basket" right>
       <h2>Your basket:</h2>
       <ProductBasket basket={props.basket}></ProductBasket>
     </Basket>

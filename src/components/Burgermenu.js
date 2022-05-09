@@ -24,3 +24,22 @@ export default function Burgermenu({ isOpen }) {
     </>
   );
 }
+
+// import { slide as Menu } from "react-burger-menu";
+// import "../styles/sidebar.css";
+
+// export default function Burgermenu() {
+//   return (
+//     <Menu className="new-burger">
+//       <a id="home" className="menu-item" href="/">
+//         Home
+//       </a>
+//       <a id="about" className="menu-item" href="/About">
+//         Om os
+//       </a>
+//       <a id="contact" className="menu-item" href="/Upcycling">
+//         Upcycling
+//       </a>
+//     </Menu>
+//   );
+// }

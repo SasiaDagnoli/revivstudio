@@ -10,41 +10,12 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Basket from "./components/Basket";
 import Productlist from "./components/Productlist";
+import Burgermenu from "./components/Burgermenu";
 
 function App() {
   const [products, setProducts] = useState([]);
 
   const [basket, setBasket] = useState([]);
-
-  useEffect(() => {
-    console.log("GetTheData");
-
-    const getTheData = async () => {
-      const res = await fetch("https://revivstudio-8a0a.restdb.io/rest/shop", {
-        headers: { "cache-control": "no-cache", "x-apikey": "62741849e8128861fcf3d098" },
-      });
-      const data = await res.json();
-      const popularArray = [];
-      const exploreArray = [];
-      console.log("data", data);
-
-      data.forEach((product) => {
-        if (product.popular === true) {
-          popularArray.push(product);
-        }
-      });
-      console.log("popular", popularArray);
-
-      data.forEach((product) => {
-        if (product.explore === true) {
-          exploreArray.push(product);
-        }
-      });
-      console.log("explore", exploreArray);
-      setProducts(data);
-    };
-    getTheData();
-  }, []);
 
   // const Burgerbasket = (props) => {
   //   return (
@@ -56,15 +27,18 @@ function App() {
   //   );
   // };
 
+  // <Shop product={products} setBasket={setBasket} basket={basket}></Shop>;
+
   return (
     <div className="App" id="outer-container">
       <Basket pageWrapId={"page-wrap"} outerContainerId={"outer-container"} setBasket={setBasket} basket={basket}></Basket>
       <div id="page-wrap">
         {/* Navigation  */}
+        {/* <Burgermenu></Burgermenu> */}
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Navigation />}>
-              <Route path="shop" element={<Shop />} />
+              <Route path="shop" element={<Shop products={products} setBasket={setBasket} basket={basket} />} />
               <Route path="collections" element={<Collections />} />
               <Route index element={<Frontpage />} />
               <Route path="upcycling" element={<Upcycling />} />
@@ -73,7 +47,7 @@ function App() {
           </Routes>
         </BrowserRouter>
         {/* Navigation done */}
-        <Shop product={products} setBasket={setBasket} basket={basket}></Shop>
+        {/* <Shop product={products} setBasket={setBasket} basket={basket}></Shop> */}
         <Footer />
       </div>
     </div>
