@@ -1,3 +1,3 @@
 export default function Shop() {
-  return <h1>Shop</h1>;
+  return <h1>Alle smykker</h1>;
 }

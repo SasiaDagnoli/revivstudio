@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Pagination, Navigation } from "swiper";
+import { Autoplay, Pagination, Navigation } from "swiper";
 
 export default function Frontpage() {
   return (
@@ -35,11 +35,15 @@ export default function Frontpage() {
             clickable: true,
           }}
           grabCursor={true}
+          /* autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }} */
           loop={true}
           centeredSlides={true}
           loopFillGroupWithBlank={true}
           navigation={true}
-          modules={[Pagination, Navigation]}
+          modules={[Autoplay, Pagination, Navigation]}
           className="swiper"
         >
           <SwiperSlide>

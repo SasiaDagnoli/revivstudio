@@ -45,6 +45,10 @@ export default function Footer() {
               </div>
             </form>
           </div>
+          <div className="footer-socialmedia">
+            <img src={`./images/instagram.svg`} alt="" />
+            <img src={`./images/facebook.svg`} alt="" />
+          </div>
         </div>
       </footer>
     </div>

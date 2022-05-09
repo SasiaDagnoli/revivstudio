@@ -1,11 +1,6 @@
 footer {
     background-color: #473832;
 
-    .footer-main {
-    display: flex;
-    justify-content: space-evenly;
-    }
-
     h2, p, label {
     color: #E4DAD1;
     }
@@ -32,4 +27,29 @@ footer {
     input[type=checkbox] {
         outline: solid 2px #E4DAD1;
     }
+
+    .footer-socialmedia {
+        img {
+            width: 20%;
+        }
+    }
+
+    @media (min-width: 800px) { 
+        .footer-main {
+            display: flex;
+            justify-content: space-evenly;
+            }
+
+        .footer-socialmedia {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+            width: 100px;
+            img {
+                width: 65%;
+            }
+        }
+    }
 }
+
