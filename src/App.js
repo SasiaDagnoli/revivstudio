@@ -8,9 +8,13 @@ import Frontpage from "./components/Frontpage";
 import Upcycling from "./components/Upcycling";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
+import Basket from "./components/Basket";
+import Productlist from "./components/Productlist";
 
 function App() {
   const [products, setProducts] = useState([]);
+
+  const [basket, setBasket] = useState([]);
 
   useEffect(() => {
     console.log("GetTheData");
@@ -42,23 +46,36 @@ function App() {
     getTheData();
   }, []);
 
+  // const Burgerbasket = (props) => {
+  //   return (
+  //     <div id="outer-container">
+  //       <Basket pageWrapId={"page-wrap"} outerContainerId={"outer-container"} setBasket={setBasket} basket={basket}></Basket>
+
+  //       {/* <div id="page-wrap">{products && <Productlist products={products} setBasket={setBasket} basket={basket}></Productlist>}</div> */}
+  //     </div>
+  //   );
+  // };
+
   return (
     <div className="App" id="outer-container">
-      {/* Navigation  */}
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Navigation />}>
-            <Route path="shop" element={<Shop />} />
-            <Route path="collections" element={<Collections />} />
-            <Route index element={<Frontpage />} />
-            <Route path="upcycling" element={<Upcycling />} />
-            <Route path="about" element={<About />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-      {/* Navigation done */}
-      <Shop product={products}></Shop>
-      <Footer />
+      <Basket pageWrapId={"page-wrap"} outerContainerId={"outer-container"} setBasket={setBasket} basket={basket}></Basket>
+      <div id="page-wrap">
+        {/* Navigation  */}
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Navigation />}>
+              <Route path="shop" element={<Shop />} />
+              <Route path="collections" element={<Collections />} />
+              <Route index element={<Frontpage />} />
+              <Route path="upcycling" element={<Upcycling />} />
+              <Route path="about" element={<About />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+        {/* Navigation done */}
+        <Shop product={products} setBasket={setBasket} basket={basket}></Shop>
+        <Footer />
+      </div>
     </div>
   );
 }
