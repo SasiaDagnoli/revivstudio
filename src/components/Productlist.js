@@ -1,5 +1,4 @@
 import Product from "./Product";
-import { BrowserRouter, Link, Route } from "react-router-dom";
 
 export default function Productlist(props) {
   console.log(props);
