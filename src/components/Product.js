@@ -1,10 +1,13 @@
+import { BrowserRouter, Link, Route } from "react-router-dom";
+import SingleView from "./SingleView";
+
 export default function Product(props) {
-  const mediaUrl = "https://revivstudio-8a0a.restdb.io/media/";
   return (
     <article className="product">
-      <img src={mediaUrl + props.product.image[0]} alt={props.product.productname} style={{ width: "40%", height: "auto" }} />
+      <img src={`./images/${props.product.imagename}`} alt={props.product.productname} />
       <h2>{props.product.productname}</h2>
       <p>{props.product.price} KR.</p>
+      <Link to={`/produkt/${props.product._id}`}>View</Link>
     </article>
   );
 }

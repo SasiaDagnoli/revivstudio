@@ -5,7 +5,7 @@ export default function Shop(props) {
   return (
     <div className="Shop">
       <h1>shop</h1>
-      {/* <Productlist products={props.product}></Productlist> */}
+      <Productlist products={props.products}></Productlist>
     </div>
   );
 }

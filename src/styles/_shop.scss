@@ -1,0 +1,36 @@
+.shop-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+   img{
+       width:100%
+   }
+
+   h2{
+       font-size: 1.2rem;
+       margin: 10px 0px 0px 0px;
+   }
+   p{
+       margin: 0;
+
+   }
+
+}
+
+@media (min-width: 800px){
+    .shop-section{
+        width: 80vw;
+        margin-right: auto;
+        margin-left: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 4rem;
+
+        h2{
+            font-size: 1.6rem;
+        }
+    }
+}

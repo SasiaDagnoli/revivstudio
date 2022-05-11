@@ -1,7 +1,9 @@
 import Product from "./Product";
+import { BrowserRouter, Link, Route } from "react-router-dom";
 
 export default function Productlist(props) {
+  console.log(props);
   const mapped = props.products.map((product, index) => <Product key={index} product={product} setBasket={props.setBasket} basket={props.basket}></Product>);
 
-  return <section>{mapped}</section>;
+  return <section className="shop-section">{mapped}</section>;
 }

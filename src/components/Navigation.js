@@ -20,11 +20,7 @@ export default function Navigation() {
           </li>
           <li>
             <Link to="/">
-              <img
-                src={`./images/logo_reviv.svg`}
-                alt="logo"
-                className="logo"
-              />
+              <img src={`/images/logo_reviv.svg`} alt="logo" className="logo" />
             </Link>
           </li>
           <li>
