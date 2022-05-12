@@ -44,6 +44,7 @@ footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 24px;
         }
 
         .dropDown_label::after {
@@ -58,15 +59,12 @@ footer {
             overflow: hidden;
             max-height: 0;
             transition: all .5s ease-in-out;
+            padding: 0 24px;
         }
 
         .dropDown_btn:checked ~ .linklist {
             display: block;
             max-height: 500px;
-        }
-
-        .footer-main {
-            padding: 0 24px;
         }
     }
 

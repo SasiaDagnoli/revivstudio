@@ -66,14 +66,10 @@ export default function Footer() {
                 />
                 <hr />
                 <div className="checkbox-label">
-                  <input type="checkbox" name="checkbox" />
-                  <label htmlFor="checkbox">
-                    Jeg har læst og accepterer privatlivspolitikken
-                  </label>
+                  <button>Tilmeld mig</button>
                 </div>
               </form>
             </div>
-            <hr className="hraccordion" />
           </div>
           <div className="footer-socialmedia">
             <img src={`./images/instagram.svg`} alt="" />
