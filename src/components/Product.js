@@ -2,7 +2,7 @@ import { BrowserRouter, Link, Route } from "react-router-dom";
 import SingleView from "./SingleView";
 
 export default function Product(props) {
-  console.log(props);
+  console.log("", props);
   return (
     <article className="product">
       <img src={`./images/${props.product.imagename}`} alt={props.product.productname} />

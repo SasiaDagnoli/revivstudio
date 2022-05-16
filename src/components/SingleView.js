@@ -11,6 +11,9 @@ export default function SingleView() {
       <h2>Normalpris {props.product.price} KR.</h2>
       <p>Inklusiv moms. Levering beregnes ved betaling.</p>
       <button> Læg i indkøbskurv</button>
+      <p className="pick-up-text">
+        ✓ Afhentning er tilgængelig fra Holmbladsgade 107. <br /> <strong>Normalt klar inden for 24 timer.</strong>{" "}
+      </p>
       <p>{props.product.productdescription}</p>
     </section>
   );

@@ -20,3 +20,30 @@ button{
     border: none;
 }
 }
+
+@media (min-width: 800px) {
+    .single-section{
+        img{
+            width: auto;
+        }
+        h1{
+            font-size: 2.2rem;
+        }
+        h2{
+            font-size: 1.5rem;
+        }
+        p{
+            font-size: 20px;
+            width: 54vw;
+        }
+        button{
+            height: 3rem;
+            width: 23rem;
+            font-size: 20px;
+            
+        }
+        .pick-up-text{
+            margin-bottom: 3rem;
+        }
+    }
+}
