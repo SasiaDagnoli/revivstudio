@@ -1,20 +1,45 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import Counter from "./Counter";
 
-export default function SingleView() {
-  const location = useLocation();
-  const { props } = location.state;
+export default function SingleView({ basket, setBasket }) {
+  const params = useParams();
+  const [product, setProduct] = useState(null);
+
+  useEffect(() => {
+    async function getProduct() {
+      const res = await fetch(`https://revivstudio-8a0a.restdb.io/rest/shop/${params.id}`, {
+        headers: { "cache-control": "no-cache", "x-apikey": "62741849e8128861fcf3d098" },
+      });
+
+      const json = await res.json();
+
+      setProduct(json);
+    }
+    getProduct();
+  }, [params.id]);
+
+  console.log(product);
 
   return (
-    <section className="single-section">
-      <img src={`/images/${props.product.imagename}`} alt={props.product.productname} />
-      <h1>{props.product.productname}</h1>
-      <h2>Normalpris {props.product.price} KR.</h2>
-      <p>Inklusiv moms. Levering beregnes ved betaling.</p>
-      <button> Læg i indkøbskurv</button>
-      <p className="pick-up-text">
-        ✓ Afhentning er tilgængelig fra Holmbladsgade 107. <br /> <strong>Normalt klar inden for 24 timer.</strong>{" "}
-      </p>
-      <p>{props.product.productdescription}</p>
-    </section>
+    <div className="product">
+      {product ? (
+        <section className="single-section">
+          <img src={`/images/${product.imagename}`} alt={product.productname} />
+          <h1>{product.productname}</h1>
+          <h2>Normalpris {product.price} KR.</h2>
+          <p>Inklusiv moms. Levering beregnes ved betaling.</p>
+          <Counter product={product} basket={basket} setBasket={setBasket} />
+          <p className="pick-up-text">
+            ✓ Afhentning er tilgængelig fra Holmbladsgade 107. <br /> <strong>Normalt klar inden for 24 timer.</strong>
+          </p>
+          <p>{product.productdescription}</p>
+        </section>
+      ) : (
+        <section>
+          <h1>Loading...</h1>
+        </section>
+      )}
+    </div>
   );
 }

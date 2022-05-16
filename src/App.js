@@ -74,7 +74,7 @@ function App() {
               <Route index element={<Frontpage />} />
               <Route path="upcycling" element={<Upcycling />} />
               <Route path="about" element={<About />} />
-              <Route path="produkt/:id" element={<SingleView />} />
+              <Route path="produkt/:id" element={<SingleView setBasket={setBasket} basket={basket} />} />
             </Route>
           </Routes>
         </BrowserRouter>
