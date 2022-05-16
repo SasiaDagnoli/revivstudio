@@ -1,13 +1,8 @@
 import { Outlet, Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Burgermenu from "./Burgermenu";
 
 export default function Navigation() {
-  const [hamburgerOpen, setHamburgerOpen] = useState(false);
-
-  const toggleHamburger = () => {
-    setHamburgerOpen(!hamburgerOpen);
-  };
   return (
     <>
       <nav className="navigation">
@@ -30,9 +25,12 @@ export default function Navigation() {
             <Link to="/about">Om os</Link>
           </li>
         </ul>
-        <div className="burgermenu" onClick={toggleHamburger}>
-          <Burgermenu isOpen={hamburgerOpen} />
+        <div className="logo-container">
+          <Link to="/">
+            <img src={`/images/logo_reviv.svg`} alt="logo" className="mobile-logo" />
+          </Link>
         </div>
+        <Burgermenu />
       </nav>
 
       <Outlet></Outlet>
@@ -40,7 +38,6 @@ export default function Navigation() {
       <style jsx>
         {`
           .navigation ul {
-            display: ${hamburgerOpen ? "inline" : "none"};
             height: 100vh;
             width: 50vw;
             margin-top: 50px;

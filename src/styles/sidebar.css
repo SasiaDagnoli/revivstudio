@@ -6,6 +6,10 @@
     right: 36px;
     top: 36px;
   }
+
+  #burger-menu-button .bm-burger-button{
+    left: 36px;
+  }
   
   /* Color/shape of burger icon bars */
   .bm-burger-bars {
