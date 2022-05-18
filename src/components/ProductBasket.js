@@ -1,5 +1,4 @@
 import RemoveFromBasket from "./RemoveFromBasket";
-import AddToBasket from "./AddToBasket";
 
 export default function ProductBasket(props) {
   const basketContent = props.basket.map((product, index) => {
@@ -10,7 +9,12 @@ export default function ProductBasket(props) {
           <p>Pris: {product.price} DKK</p>
           <p>Antal: {product.amount}</p>
 
-          <RemoveFromBasket key={index} product={product} basket={props.basket} setBasket={props.setBasket} />
+          <RemoveFromBasket
+            key={index}
+            product={product}
+            basket={props.basket}
+            setBasket={props.setBasket}
+          />
         </article>
       </div>
     );

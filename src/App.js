@@ -11,7 +11,6 @@ import Footer from "./components/Footer";
 import Basket from "./components/Basket";
 import SingleView from "./components/SingleView";
 import Checkout from "./components/Checkout";
-import MyBasket from "./components/MyBasket";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -23,7 +22,10 @@ function App() {
 
     const getTheData = async () => {
       const res = await fetch("https://revivstudio-8a0a.restdb.io/rest/shop", {
-        headers: { "cache-control": "no-cache", "x-apikey": "62741849e8128861fcf3d098" },
+        headers: {
+          "cache-control": "no-cache",
+          "x-apikey": "62741849e8128861fcf3d098",
+        },
       });
       const data = await res.json();
       const popularArray = [];
@@ -62,20 +64,37 @@ function App() {
 
   return (
     <div className="App" id="outer-container">
-      <Basket pageWrapId={"page-wrap"} outerContainerId={"outer-container"} setBasket={setBasket} basket={basket}></Basket>
+      <Basket
+        pageWrapId={"page-wrap"}
+        outerContainerId={"outer-container"}
+        setBasket={setBasket}
+        basket={basket}
+      ></Basket>
       <div id="page-wrap">
         {/* Navigation  */}
         {/* <Burgermenu></Burgermenu> */}
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Navigation />}>
-              <Route path="shop" element={<Shop products={products} setBasket={setBasket} basket={basket} />} />
+              <Route
+                path="shop"
+                element={
+                  <Shop
+                    products={products}
+                    setBasket={setBasket}
+                    basket={basket}
+                  />
+                }
+              />
               <Route path="collections" element={<Collections />} />
               <Route index element={<Frontpage />} />
               <Route path="upcycling" element={<Upcycling />} />
               <Route path="about" element={<About />} />
-              <Route path="checkout" element={<Checkout />} />
-              <Route path="produkt/:id" element={<SingleView setBasket={setBasket} basket={basket} />} />
+              {/* <Route path="checkout" element={<Checkout />} /> */}
+              <Route
+                path="produkt/:id"
+                element={<SingleView setBasket={setBasket} basket={basket} />}
+              />
             </Route>
           </Routes>
         </BrowserRouter>

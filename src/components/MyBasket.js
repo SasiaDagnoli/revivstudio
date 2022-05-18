@@ -1,4 +1,4 @@
-import { BrowserRouter, Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function MyBasket(props) {
   const initialValue = 0;

@@ -1,5 +1,4 @@
 import { Outlet, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
 import Burgermenu from "./Burgermenu";
 
 export default function Navigation() {
@@ -27,7 +26,11 @@ export default function Navigation() {
         </ul>
         <div className="logo-container">
           <Link to="/">
-            <img src={`/images/logo_reviv.svg`} alt="logo" className="mobile-logo" />
+            <img
+              src={`/images/logo_reviv.svg`}
+              alt="logo"
+              className="mobile-logo"
+            />
           </Link>
         </div>
         <Burgermenu />
