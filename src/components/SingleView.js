@@ -1,6 +1,6 @@
 import { useLocation, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Counter from "./Counter";
+import AddToBasket from "./AddToBasket";
 
 export default function SingleView({ basket, setBasket }) {
   const params = useParams();
@@ -29,7 +29,7 @@ export default function SingleView({ basket, setBasket }) {
           <h1>{product.productname}</h1>
           <h2>Normalpris {product.price} KR.</h2>
           <p>Inklusiv moms. Levering beregnes ved betaling.</p>
-          <Counter product={product} basket={basket} setBasket={setBasket} />
+          <AddToBasket product={product} basket={basket} setBasket={setBasket} />
           <p className="pick-up-text">
             ✓ Afhentning er tilgængelig fra Holmbladsgade 107. <br /> <strong>Normalt klar inden for 24 timer.</strong>
           </p>

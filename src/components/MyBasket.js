@@ -7,7 +7,7 @@ export default function MyBasket(props) {
     <div id="your-basket">
       <h2 className="subtotal">Subtotal: {sum} DKK</h2>
       <button className="checkout-button" onClick={() => props.setPage("form")}>
-        Go to checkout
+        Videre til kassen
       </button>
     </div>
   );
