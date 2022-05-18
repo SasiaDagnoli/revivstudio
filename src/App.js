@@ -9,9 +9,9 @@ import Upcycling from "./components/Upcycling";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Basket from "./components/Basket";
-import Productlist from "./components/Productlist";
-import Burgermenu from "./components/Burgermenu";
 import SingleView from "./components/SingleView";
+import Checkout from "./components/Checkout";
+import MyBasket from "./components/MyBasket";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -74,6 +74,7 @@ function App() {
               <Route index element={<Frontpage />} />
               <Route path="upcycling" element={<Upcycling />} />
               <Route path="about" element={<About />} />
+              <Route path="checkout" element={<Checkout />} />
               <Route path="produkt/:id" element={<SingleView setBasket={setBasket} basket={basket} />} />
             </Route>
           </Routes>

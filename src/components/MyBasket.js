@@ -1,3 +1,5 @@
+import { BrowserRouter, Link, Route } from "react-router-dom";
+
 export default function MyBasket(props) {
   const initialValue = 0;
   let sum = props.basket.reduce(function (previousValue, currentValue) {
@@ -6,9 +8,8 @@ export default function MyBasket(props) {
   return (
     <div id="your-basket">
       <h2 className="subtotal">Subtotal: {sum} DKK</h2>
-      <button className="checkout-button" onClick={() => props.setPage("form")}>
-        Videre til kassen
-      </button>
+
+      {/* <Link to="/checkout">Checkout</Link> */}
     </div>
   );
 }
