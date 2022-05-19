@@ -7,4 +7,8 @@
 @use "styles/shop";
 @use "styles/singleview";
 @use "styles/basket";
-@use "styles/buttons"
+@use "styles/buttons";
+
+* {
+    margin-top: 0;
+}

@@ -94,7 +94,7 @@ function App() {
                 }
               />
               <Route path="collections" element={<Collections />} />
-              <Route index element={<Frontpage />} />
+              <Route index element={<Frontpage products={products} />} />
               <Route path="upcycling" element={<Upcycling />} />
               <Route path="about" element={<About />} />
               <Route path="checkout" element={<Checkout />} />

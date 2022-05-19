@@ -5,7 +5,7 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import { Link } from "react-router-dom";
 
-export default function Frontpage() {
+export default function Frontpage(props) {
   return (
     <div>
       <section id="first-section">
@@ -50,22 +50,7 @@ export default function Frontpage() {
           className="swiper"
         >
           <SwiperSlide>
-            <img src={`./images/placeholder_products.jpg`} alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={`./images/placeholder_products.jpg`} alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={`./images/placeholder_products.jpg`} alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={`./images/placeholder_products.jpg`} alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={`./images/placeholder_products.jpg`} alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={`./images/placeholder_products.jpg`} alt="" />
+            <img src={`./images/${props.imagename}`} alt="" />
           </SwiperSlide>
         </Swiper>
         <div className="custom-pagination"></div>
