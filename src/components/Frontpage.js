@@ -3,6 +3,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper";
+import { Link } from "react-router-dom";
 
 export default function Frontpage() {
   return (
@@ -13,7 +14,9 @@ export default function Frontpage() {
           alt=""
           className="background-image"
         /> */}
-        <button>Shop Nu</button>
+        <Link to="/shop">
+          <button>Shop Nu</button>
+        </Link>
       </section>
       <section>
         <h1>Populære produkter</h1>
