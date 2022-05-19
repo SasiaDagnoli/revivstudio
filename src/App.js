@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import Basket from "./components/Basket";
 import SingleView from "./components/SingleView";
 import Checkout from "./components/Checkout";
+import MyBasket from "./components/MyBasket";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -64,16 +65,22 @@ function App() {
 
   return (
     <div className="App" id="outer-container">
-      <Basket
+      {/* <Basket
         pageWrapId={"page-wrap"}
         outerContainerId={"outer-container"}
         setBasket={setBasket}
         basket={basket}
-      ></Basket>
+      ></Basket> */}
       <div id="page-wrap">
         {/* Navigation  */}
         {/* <Burgermenu></Burgermenu> */}
         <BrowserRouter>
+          <Basket
+            pageWrapId={"page-wrap"}
+            outerContainerId={"outer-container"}
+            setBasket={setBasket}
+            basket={basket}
+          ></Basket>
           <Routes>
             <Route path="/" element={<Navigation />}>
               <Route
@@ -90,7 +97,7 @@ function App() {
               <Route index element={<Frontpage />} />
               <Route path="upcycling" element={<Upcycling />} />
               <Route path="about" element={<About />} />
-              {/* <Route path="checkout" element={<Checkout />} /> */}
+              <Route path="checkout" element={<Checkout />} />
               <Route
                 path="produkt/:id"
                 element={<SingleView setBasket={setBasket} basket={basket} />}
