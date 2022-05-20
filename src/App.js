@@ -12,6 +12,9 @@ import Basket from "./components/Basket";
 import SingleView from "./components/SingleView";
 import Checkout from "./components/Checkout";
 import ContactInfo from "./components/ContactInfo";
+import Delivery from "./components/Delivery";
+import ApproveOrder from "./components/ApproveOrder";
+import Payment from "./components/Payment";
 import MyBasket from "./components/MyBasket";
 
 function App() {
@@ -86,6 +89,9 @@ function App() {
               <Route path="about" element={<About />} />
               <Route path="checkout" element={<Checkout basket={basket} />} />
               <Route path="kontaktinfo" element={<ContactInfo basket={basket} />}></Route>
+              <Route path="levering" element={<Delivery basket={basket} />}></Route>
+              <Route path="gennemse" element={<ApproveOrder basket={basket} />}></Route>
+              <Route path="betaling" element={<Payment basket={basket} />}></Route>
               <Route path="produkt/:id" element={<SingleView setBasket={setBasket} basket={basket} />} />
             </Route>
           </Routes>

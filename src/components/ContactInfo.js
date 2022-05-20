@@ -10,8 +10,9 @@ export default function ContactInfo() {
             <strong>Oplysninger →</strong>
           </li>
           <li>Levering →</li>
-          <li>Betaling →</li>
-          <li>Gennemgå</li>
+
+          <li>Gennemgå →</li>
+          <li>Betaling </li>
         </ul>
       </div>
       <section className="contactinfo-section">
@@ -44,7 +45,7 @@ export default function ContactInfo() {
             <label htmlFor="other-adress">Levering til anden adresse</label>
           </div>
 
-          <Link to="/kontaktinfo">
+          <Link to="/levering">
             <button>→</button>
           </Link>
         </form>
