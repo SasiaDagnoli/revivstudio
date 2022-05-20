@@ -6,6 +6,19 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 import { Link } from "react-router-dom";
 
 export default function Frontpage(props) {
+  const popularArray = [];
+  props.products.forEach((product) => {
+    if (product.explore === true) {
+      popularArray.push(product);
+    }
+  });
+
+  const exploreArray = [];
+  props.products.forEach((product) => {
+    if (product.explore === true) {
+      exploreArray.push(product);
+    }
+  });
   return (
     <div>
       <section id="first-section">
@@ -49,9 +62,13 @@ export default function Frontpage(props) {
           modules={[Autoplay, Pagination, Navigation]}
           className="swiper"
         >
-          <SwiperSlide>
-            <img src={`./images/${props.imagename}`} alt="" />
-          </SwiperSlide>
+          {popularArray.map((img, i) => {
+            return (
+              <SwiperSlide key={i}>
+                <img src={`/images/${img.imagename}`} alt="" />
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
         <div className="custom-pagination"></div>
       </section>
@@ -90,24 +107,13 @@ export default function Frontpage(props) {
           modules={[Pagination, Navigation]}
           className="swiper"
         >
-          <SwiperSlide>
-            <img src={`./images/placeholder_products.jpg`} alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={`./images/placeholder_products.jpg`} alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={`./images/placeholder_products.jpg`} alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={`./images/placeholder_products.jpg`} alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={`./images/placeholder_products.jpg`} alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={`./images/placeholder_products.jpg`} alt="" />
-          </SwiperSlide>
+          {exploreArray.map((imgExplore, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <img src={`/images/${imgExplore.imagename}`} alt="" />
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </section>
     </div>

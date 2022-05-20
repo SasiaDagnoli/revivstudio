@@ -79,20 +79,49 @@ function App() {
         {/* Navigation  */}
         {/* <Burgermenu></Burgermenu> */}
         <BrowserRouter>
-          <Basket pageWrapId={"page-wrap"} outerContainerId={"outer-container"} setBasket={setBasket} basket={basket}></Basket>
+          <Basket
+            pageWrapId={"page-wrap"}
+            outerContainerId={"outer-container"}
+            setBasket={setBasket}
+            basket={basket}
+          ></Basket>
           <Routes>
             <Route path="/" element={<Navigation />}>
-              <Route path="shop" element={<Shop products={products} setBasket={setBasket} basket={basket} />} />
+              <Route
+                path="shop"
+                element={
+                  <Shop
+                    products={products}
+                    setBasket={setBasket}
+                    basket={basket}
+                  />
+                }
+              />
               <Route path="collections" element={<Collections />} />
               <Route index element={<Frontpage products={products} />} />
               <Route path="upcycling" element={<Upcycling />} />
               <Route path="about" element={<About />} />
               <Route path="checkout" element={<Checkout basket={basket} />} />
-              <Route path="kontaktinfo" element={<ContactInfo basket={basket} />}></Route>
-              <Route path="levering" element={<Delivery basket={basket} />}></Route>
-              <Route path="gennemse" element={<ApproveOrder basket={basket} />}></Route>
-              <Route path="betaling" element={<Payment basket={basket} />}></Route>
-              <Route path="produkt/:id" element={<SingleView setBasket={setBasket} basket={basket} />} />
+              <Route
+                path="kontaktinfo"
+                element={<ContactInfo basket={basket} />}
+              ></Route>
+              <Route
+                path="levering"
+                element={<Delivery basket={basket} />}
+              ></Route>
+              <Route
+                path="gennemse"
+                element={<ApproveOrder basket={basket} />}
+              ></Route>
+              <Route
+                path="betaling"
+                element={<Payment basket={basket} />}
+              ></Route>
+              <Route
+                path="produkt/:id"
+                element={<SingleView setBasket={setBasket} basket={basket} />}
+              />
             </Route>
           </Routes>
         </BrowserRouter>
