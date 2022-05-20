@@ -28,6 +28,7 @@ export default function AddToBasket(props) {
           price: props.product.price,
           id: props.product._id,
           amount: 1,
+          imagename: props.product.imagename,
         });
       }
     });

@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import Basket from "./components/Basket";
 import SingleView from "./components/SingleView";
 import Checkout from "./components/Checkout";
+import ContactInfo from "./components/ContactInfo";
 import MyBasket from "./components/MyBasket";
 
 function App() {
@@ -75,33 +76,17 @@ function App() {
         {/* Navigation  */}
         {/* <Burgermenu></Burgermenu> */}
         <BrowserRouter>
-          <Basket
-            pageWrapId={"page-wrap"}
-            outerContainerId={"outer-container"}
-            setBasket={setBasket}
-            basket={basket}
-          ></Basket>
+          <Basket pageWrapId={"page-wrap"} outerContainerId={"outer-container"} setBasket={setBasket} basket={basket}></Basket>
           <Routes>
             <Route path="/" element={<Navigation />}>
-              <Route
-                path="shop"
-                element={
-                  <Shop
-                    products={products}
-                    setBasket={setBasket}
-                    basket={basket}
-                  />
-                }
-              />
+              <Route path="shop" element={<Shop products={products} setBasket={setBasket} basket={basket} />} />
               <Route path="collections" element={<Collections />} />
               <Route index element={<Frontpage products={products} />} />
               <Route path="upcycling" element={<Upcycling />} />
               <Route path="about" element={<About />} />
-              <Route path="checkout" element={<Checkout />} />
-              <Route
-                path="produkt/:id"
-                element={<SingleView setBasket={setBasket} basket={basket} />}
-              />
+              <Route path="checkout" element={<Checkout basket={basket} />} />
+              <Route path="kontaktinfo" element={<ContactInfo basket={basket} />}></Route>
+              <Route path="produkt/:id" element={<SingleView setBasket={setBasket} basket={basket} />} />
             </Route>
           </Routes>
         </BrowserRouter>

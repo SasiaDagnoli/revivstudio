@@ -1,0 +1,22 @@
+.checkout-section{
+   width: 80vw;
+   margin-left: auto;
+   margin-right: auto;
+
+    article{
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        column-gap: 15px;
+        img{
+            width: 100%;
+        }
+        h2{
+            font-size: 1rem;
+        }
+    
+    }
+    .delivery-info, .price-info{
+        display: flex;
+        justify-content: space-between;
+    }
+}
