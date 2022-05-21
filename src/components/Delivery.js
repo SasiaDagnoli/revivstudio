@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-export default function Delivery() {
+export default function Delivery(props) {
+  console.log(props);
   return (
     <div>
       <div className="checkout-steps">
@@ -20,7 +21,8 @@ export default function Delivery() {
           <div className="form-control">
             <input type="checkbox" id="postnord-pakkeboks" />
             <label htmlFor="postnord-pakkeboks">
-              Postnord - Pakkeboks (Gratis over Kr. 299) <br /> Levering til nærmeste posthus/pakkeboks <br />
+              Postnord - Pakkeboks (Gratis over Kr. 299) <br /> Levering til
+              nærmeste posthus/pakkeboks <br />
               <strong>39 Kr.</strong>
             </label>
           </div>
@@ -36,7 +38,8 @@ export default function Delivery() {
           <div className="form-control">
             <input type="checkbox" id="postnord-hjemme" />
             <label htmlFor="postnord-hjemme">
-              Postnord - Hjemmelevering (Gratis over Kr. 499,-) <br /> Levering til din adresse med Postnord. <br />
+              Postnord - Hjemmelevering (Gratis over Kr. 499,-) <br /> Levering
+              til din adresse med Postnord. <br />
               <strong>49 Kr.</strong>
             </label>
           </div>
@@ -45,7 +48,8 @@ export default function Delivery() {
             <input type="checkbox" id="postnord-erhverv" />
             <label htmlFor="postnord-erhverv">
               {" "}
-              Postnord - Erhvers (Gratis over 499,-) <br /> Modtag pakken på dit arbejde <br />
+              Postnord - Erhvers (Gratis over 499,-) <br /> Modtag pakken på dit
+              arbejde <br />
               <strong>39 Kr.</strong>
             </label>
           </div>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Delivery from "./Delivery";
 
 export default function ContactInfo(props) {
   const initialFormData = Object.freeze({
@@ -19,7 +20,6 @@ export default function ContactInfo(props) {
       updateFormData({
         ...formData,
 
-        // Trimming any whitespace
         [e.target.name]: e.target.value.trim(),
       });
     };
@@ -27,7 +27,6 @@ export default function ContactInfo(props) {
     const handleSubmit = (e) => {
       e.preventDefault();
       console.log(formData);
-      // ... submit to API or something
     };
 
     return (
