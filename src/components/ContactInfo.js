@@ -1,6 +1,73 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function ContactInfo() {
+export default function ContactInfo(props) {
+  const initialFormData = Object.freeze({
+    company: "",
+    fullname: "",
+    address: "",
+    country: "",
+    phone: "",
+    email: "",
+    note: "",
+  });
+
+  const CustomerInformation = () => {
+    const [formData, updateFormData] = useState(initialFormData);
+
+    const handleChange = (e) => {
+      updateFormData({
+        ...formData,
+
+        // Trimming any whitespace
+        [e.target.name]: e.target.value.trim(),
+      });
+    };
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      console.log(formData);
+      // ... submit to API or something
+    };
+
+    return (
+      <>
+        <label>
+          Firma
+          <input type="text" name="company" onChange={handleChange} />
+        </label>
+        <label>
+          Fulde navn
+          <input type="text" name="fullname" onChange={handleChange} />
+        </label>
+        <label>
+          Adresse
+          <input type="text" name="address" onChange={handleChange} />
+        </label>
+        <label>
+          Land
+          <input type="text" name="country" onChange={handleChange} />
+        </label>
+        <label>
+          Telefon
+          <input type="text" name="phone" onChange={handleChange} />
+        </label>
+        <label>
+          E-mail
+          <input type="text" name="email" onChange={handleChange} />
+        </label>
+        <label>
+          Notat
+          <input type="text" name="note" onChange={handleChange} />
+        </label>
+
+        <button onClick={handleSubmit}>
+          <Link to="/levering">Submit</Link>
+        </button>
+      </>
+    );
+  };
+
   return (
     <div>
       <div className="checkout-steps">
@@ -18,27 +85,29 @@ export default function ContactInfo() {
       <section className="contactinfo-section">
         <h1>1. Kontaktoplysninger</h1>
 
-        <form action="">
+        <CustomerInformation basket={props.basket}></CustomerInformation>
+
+        {/*  <form action="">
           <label htmlFor="company">Firma</label>
-          <input type="text" id="company" />
+          <input name="company" type="text" id="company" />
 
           <label htmlFor="name">Fulde navn</label>
-          <input type="text" id="name" />
+          <input name="fullname" type="text" id="name" />
 
           <label htmlFor="adress">Adresse</label>
-          <input type="text" id="adress" />
+          <input name="address" type="text" id="adress" />
 
           <label htmlFor="country">Land</label>
-          <input type="text" id="country" />
+          <input name="country" type="text" id="country" />
 
           <label htmlFor="telephone">Telefon</label>
-          <input type="tel" id="telephone" minLength={8} />
+          <input name="phone" type="tel" id="telephone" minLength={8} />
 
           <label htmlFor="email">Email</label>
-          <input type="email" id="email" />
+          <input name="email" type="email" id="email" />
 
           <label htmlFor="notes">Notat</label>
-          <input type="text" id="notes" />
+          <input name="note" type="text" id="notes" />
 
           <div className="other-adress-check">
             <input type="checkbox" id="other-adress" />
@@ -48,7 +117,7 @@ export default function ContactInfo() {
           <Link to="/levering">
             <button>→</button>
           </Link>
-        </form>
+        </form> */}
       </section>
     </div>
   );
