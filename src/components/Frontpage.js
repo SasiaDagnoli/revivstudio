@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 export default function Frontpage(props) {
   const popularArray = [];
   props.products.forEach((product) => {
-    if (product.explore === true) {
+    if (product.popular === true) {
       popularArray.push(product);
     }
   });
