@@ -61,7 +61,9 @@ export default function ContactInfo(props) {
         </label>
 
         <button onClick={handleSubmit}>
-          <Link to="/levering">Submit</Link>
+          <Link to={{ pathname: "/levering", state: { formData } }}>
+            Submit
+          </Link>
         </button>
       </>
     );
