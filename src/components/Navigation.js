@@ -10,7 +10,7 @@ export default function Navigation() {
             <Link to="/shop">Shop</Link>
           </li>
           <li>
-            <Link to="/collections">Kollektioner</Link>
+            <Link to="/kollektioner">Kollektioner</Link>
           </li>
           <li className="navigationlogo">
             <Link to="/">
@@ -21,7 +21,7 @@ export default function Navigation() {
             <Link to="/upcycling">Upcycling</Link>
           </li>
           <li>
-            <Link to="/about">Om os</Link>
+            <Link to="/om-os">Om os</Link>
           </li>
         </ul>
         <div className="logo-container">

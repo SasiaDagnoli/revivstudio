@@ -12,7 +12,7 @@ export default function MyBasket(props) {
     <div id="your-basket">
       <h2 className="subtotal">Subtotal: {sum} DKK</h2>
       {props.basket.length > 0 && (
-        <Link to="/checkout" onClick={props.closeSideBar}>
+        <Link to="/kurv" onClick={props.closeSideBar}>
           <button>Videre til kassen</button>
         </Link>
       )}

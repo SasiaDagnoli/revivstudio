@@ -97,11 +97,11 @@ function App() {
                   />
                 }
               />
-              <Route path="collections" element={<Collections />} />
+              <Route path="kollektioner" element={<Collections />} />
               <Route index element={<Frontpage products={products} />} />
               <Route path="upcycling" element={<Upcycling />} />
-              <Route path="about" element={<About />} />
-              <Route path="checkout" element={<Checkout basket={basket} />} />
+              <Route path="om-os" element={<About />} />
+              <Route path="kurv" element={<Checkout basket={basket} />} />
               <Route
                 path="kontaktinfo"
                 element={<ContactInfo basket={basket} />}

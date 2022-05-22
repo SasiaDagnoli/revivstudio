@@ -25,7 +25,7 @@ export default function Burgermenu() {
           </Link>
         </li>
         <li>
-          <Link to="/collections" onClick={closeSideBar}>
+          <Link to="/kollektioner" onClick={closeSideBar}>
             Kollektioner
           </Link>
         </li>
@@ -36,7 +36,7 @@ export default function Burgermenu() {
           </Link>
         </li>
         <li>
-          <Link to="/about" onClick={closeSideBar}>
+          <Link to="/om-os" onClick={closeSideBar}>
             Om os
           </Link>
         </li>
