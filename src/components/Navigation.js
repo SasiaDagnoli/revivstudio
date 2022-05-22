@@ -12,7 +12,7 @@ export default function Navigation() {
           <li>
             <Link to="/collections">Kollektioner</Link>
           </li>
-          <li>
+          <li className="navigationlogo">
             <Link to="/">
               <img src={`/images/logo_reviv.svg`} alt="logo" className="logo" />
             </Link>
@@ -52,7 +52,7 @@ export default function Navigation() {
             .navigation ul {
               display: flex;
               justify-content: center;
-              gap: 120px;
+              gap: 95px;
               width: 95%;
               height: 50px;
               //position: unset;
