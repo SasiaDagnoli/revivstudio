@@ -1,0 +1,12 @@
+
+.cardfields {
+    overflow: hidden;
+    max-height: 0;
+    transition: all .5s ease-in-out;
+    padding: 0 24px;
+}
+
+.dropDown_btn:checked ~ .cardfields {
+    display: block;
+    max-height: 500px;
+}

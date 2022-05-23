@@ -20,11 +20,11 @@ export default function Payment() {
       <section className="payment-section">
         <form action="">
           <div className="form-control">
-            <input type="checkbox" id="mobilepay" />
+            <input type="radio" name="paymentmethod" id="mobilepay" />
             <label htmlFor="mobilepay">Mobilepay</label>
           </div>
           <div className="form-control">
-            <input type="checkbox" id="kort" />
+            <input type="radio" name="paymentmethod" id="kort" />
             <label htmlFor="kort">Kortbetaling</label>
           </div>
           <div className="card-form">
@@ -38,7 +38,7 @@ export default function Payment() {
             <input type="text" id="cc" />
           </div>
           <div className="form-control">
-            <input type="checkbox" id="bankoverførsel" />
+            <input type="radio" name="paymentmethod" id="bankoverførsel" />
             <label htmlFor="bankoverførsel">Bankoverførsel</label>
           </div>
 
