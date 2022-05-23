@@ -5,16 +5,17 @@ export default function ProductBasket(props) {
     return (
       <div>
         <article key={index}>
-          <h3>{product.productname}</h3>
+          <div className="remove-from-basket">
+            <h3>{product.productname}</h3>
+            <RemoveFromBasket
+              key={index}
+              product={product}
+              basket={props.basket}
+              setBasket={props.setBasket}
+            />
+          </div>
           <p>Pris: {product.price} DKK</p>
           <p>Antal: {product.amount}</p>
-
-          <RemoveFromBasket
-            key={index}
-            product={product}
-            basket={props.basket}
-            setBasket={props.setBasket}
-          />
         </article>
       </div>
     );

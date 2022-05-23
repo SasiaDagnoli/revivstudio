@@ -3,15 +3,15 @@
 //     position: relative;
 //     z-index: -2;
 // }
-/* #first-section {
+#first-section {
     button{
-     position: fixed;
+     position: absolute;
      left: 50%;
      bottom: 20px;
      transform: translate(-50%, -50%);
      margin: 0 auto;
     }
-} */
+}
 
 .swiper img {
     width: 100%;
@@ -36,7 +36,7 @@
 
     @media (min-width: 800px) {
         button {
-            position: absolute;
+            left: auto;
             right: 0;
             bottom: 0;
             margin: 100px;

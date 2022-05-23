@@ -1,3 +1,13 @@
+.remove-from-basket{
+  display: flex;
+  gap: 20%;
+  align-items: baseline;
+
+  button {
+    font-size: 2rem;
+    cursor: pointer;
+  }
+}
 #Basket {
     background-color: white;
     position: relative;
@@ -34,6 +44,16 @@
   //   padding-top: 2rem;
   padding-bottom: 2rem;
   //   border-top: 3px solid #fdb3d4;
+
+  button {
+    height: 2rem;
+    background-color: #c3b3ae;
+    border: none;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    width: 100%;
+    font-size: 1.2rem;
+  }
   }
   .product {
     border: none;
