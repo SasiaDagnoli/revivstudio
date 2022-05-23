@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export default function Payment() {
   return (
     <div>
@@ -40,6 +41,10 @@ export default function Payment() {
             <input type="checkbox" id="bankoverførsel" />
             <label htmlFor="bankoverførsel">Bankoverførsel</label>
           </div>
+
+          <Link to="/kvittering">
+            <button>Videre</button>
+          </Link>
         </form>
       </section>
     </div>

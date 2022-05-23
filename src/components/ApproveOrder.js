@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 export default function ApproveOrder(props) {
+  const number = parseInt(props.deliveryState);
   const mapped = props.basket.map((product, index) => (
     <article>
       <img src={`./images/${product.imagename}`} alt="" />
@@ -14,6 +15,13 @@ export default function ApproveOrder(props) {
   let sum = props.basket.reduce(function (previousValue, currentValue) {
     return previousValue + currentValue.price * currentValue.amount;
   }, initialValue);
+  let totalWithDelivery = props.basket.reduce(function (
+    previousValue,
+    currentValue
+  ) {
+    return previousValue + currentValue.price * currentValue.amount + number;
+  },
+  initialValue);
   return (
     <div>
       <div className="checkout-steps">
@@ -42,7 +50,7 @@ export default function ApproveOrder(props) {
           </div>
           <div>
             <p>Levering:</p>
-            <p>Pris,-</p>
+            <p>{number} Kr.</p>
           </div>
           <div>
             <p>Moms udgør</p>
@@ -52,11 +60,14 @@ export default function ApproveOrder(props) {
         <hr />
         <div className="order-price-total">
           <p>I alt</p>
-          <p>Kr. {sum}</p>
+          <p>Kr. {totalWithDelivery}</p>
         </div>
         <hr />
         <div className="order-accept">
-          <p>Klik på "Jeg accpeterer" for at bekræfte, at du har læst og accepteret forretningsbetingelserne.</p>
+          <p>
+            Klik på "Jeg accpeterer" for at bekræfte, at du har læst og
+            accepteret forretningsbetingelserne.
+          </p>
           <p>
             <strong>Klik her for at læse forretningsbetingelserne</strong>
           </p>
@@ -70,7 +81,10 @@ export default function ApproveOrder(props) {
             </div>
             <div className="form-control">
               <input type="checkbox" id="newsletter-sign-up" />
-              <label htmlFor="newsletter-sign-up">Tilmeld mig nyhedsbrevet og giv mig besked om gode tilbud og spændende nyheder.</label>
+              <label htmlFor="newsletter-sign-up">
+                Tilmeld mig nyhedsbrevet og giv mig besked om gode tilbud og
+                spændende nyheder.
+              </label>
             </div>
             <Link to="/betaling">
               <button>→</button>

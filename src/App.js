@@ -16,11 +16,13 @@ import Delivery from "./components/Delivery";
 import ApproveOrder from "./components/ApproveOrder";
 import Payment from "./components/Payment";
 import MyBasket from "./components/MyBasket";
+import Receipt from "./components/Receipt";
 
 function App() {
   const [products, setProducts] = useState([]);
 
   const [basket, setBasket] = useState([]);
+  const [deliveryState, setDelivery] = useState();
 
   const initialFormData = Object.freeze({
     company: "",
@@ -126,15 +128,34 @@ function App() {
               ></Route>
               <Route
                 path="levering"
-                element={<Delivery basket={basket} formData={formData} />}
+                element={
+                  <Delivery
+                    basket={basket}
+                    formData={formData}
+                    deliveryState={deliveryState}
+                    setDelivery={setDelivery}
+                  />
+                }
               ></Route>
               <Route
                 path="gennemse"
-                element={<ApproveOrder basket={basket} />}
+                element={
+                  <ApproveOrder basket={basket} deliveryState={deliveryState} />
+                }
               ></Route>
               <Route
                 path="betaling"
                 element={<Payment basket={basket} />}
+              ></Route>
+              <Route
+                path="kvittering"
+                element={
+                  <Receipt
+                    basket={basket}
+                    formData={formData}
+                    deliveryState={deliveryState}
+                  />
+                }
               ></Route>
               <Route
                 path="produkt/:id"
