@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import Delivery from "./Delivery";
 
 export default function ContactInfo(props) {
-  const initialFormData = Object.freeze({
+  let navigate = useNavigate();
+  /* const initialFormData = Object.freeze({
     company: "",
     fullname: "",
     address: "",
@@ -11,60 +12,68 @@ export default function ContactInfo(props) {
     phone: "",
     email: "",
     note: "",
-  });
+  }); */
 
   const CustomerInformation = () => {
-    const [formData, updateFormData] = useState(initialFormData);
-
+    /*  const [formData, updateFormData] = useState(initialFormData); */
     const handleChange = (e) => {
-      updateFormData({
-        ...formData,
+      /* props.updateFormData((old) => ({
+        ...props.old,
 
         [e.target.name]: e.target.value.trim(),
-      });
+      })); */
     };
 
     const handleSubmit = (e) => {
       e.preventDefault();
-      console.log(formData);
+      /* console.log(e.target.elements);
+      console.log(props.formData); */
+      props.updateFormData({
+        company: e.target.company.value,
+        fullname: e.target.fullname.value,
+        address: e.target.address.value,
+        country: e.target.country.value,
+        phone: e.target.phone.value,
+        email: e.target.email.value,
+        note: e.target.note.value,
+      });
+      navigate("/levering", { replace: true });
     };
 
     return (
       <>
-        <label>
-          Firma
-          <input type="text" name="company" onChange={handleChange} />
-        </label>
-        <label>
-          Fulde navn
-          <input type="text" name="fullname" onChange={handleChange} />
-        </label>
-        <label>
-          Adresse
-          <input type="text" name="address" onChange={handleChange} />
-        </label>
-        <label>
-          Land
-          <input type="text" name="country" onChange={handleChange} />
-        </label>
-        <label>
-          Telefon
-          <input type="text" name="phone" onChange={handleChange} />
-        </label>
-        <label>
-          E-mail
-          <input type="text" name="email" onChange={handleChange} />
-        </label>
-        <label>
-          Notat
-          <input type="text" name="note" onChange={handleChange} />
-        </label>
+        <form onSubmit={handleSubmit}>
+          <label>
+            Firma
+            <input type="text" name="company" onChange={handleChange} />
+          </label>
+          <label>
+            Fulde navn
+            <input type="text" name="fullname" onChange={handleChange} />
+          </label>
+          <label>
+            Adresse
+            <input type="text" name="address" onChange={handleChange} />
+          </label>
+          <label>
+            Land
+            <input type="text" name="country" onChange={handleChange} />
+          </label>
+          <label>
+            Telefon
+            <input type="text" name="phone" onChange={handleChange} />
+          </label>
+          <label>
+            E-mail
+            <input type="text" name="email" onChange={handleChange} />
+          </label>
+          <label>
+            Notat
+            <input type="text" name="note" onChange={handleChange} />
+          </label>
 
-        <button onClick={handleSubmit}>
-          <Link to={{ pathname: "/levering", state: { formData } }}>
-            Submit
-          </Link>
-        </button>
+          <button>Submit</button>
+        </form>
       </>
     );
   };

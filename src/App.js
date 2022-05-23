@@ -22,6 +22,18 @@ function App() {
 
   const [basket, setBasket] = useState([]);
 
+  const initialFormData = Object.freeze({
+    company: "",
+    fullname: "",
+    address: "",
+    country: "",
+    phone: "",
+    email: "",
+    note: "",
+  });
+
+  const [formData, updateFormData] = useState(initialFormData);
+
   useEffect(() => {
     console.log("GetTheData");
 
@@ -104,11 +116,17 @@ function App() {
               <Route path="kurv" element={<Checkout basket={basket} />} />
               <Route
                 path="kontaktinfo"
-                element={<ContactInfo basket={basket} />}
+                element={
+                  <ContactInfo
+                    basket={basket}
+                    formData={formData}
+                    updateFormData={updateFormData}
+                  />
+                }
               ></Route>
               <Route
                 path="levering"
-                element={<Delivery basket={basket} />}
+                element={<Delivery basket={basket} formData={formData} />}
               ></Route>
               <Route
                 path="gennemse"
