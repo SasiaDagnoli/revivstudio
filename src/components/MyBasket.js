@@ -1,6 +1,4 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import Checkout from "./Checkout";
 
 export default function MyBasket(props) {
   const initialValue = 0;
@@ -10,7 +8,7 @@ export default function MyBasket(props) {
 
   return (
     <div id="your-basket">
-      <h2 className="subtotal">Subtotal: {sum} DKK</h2>
+      <h2 className="subtotal">Pris i alt: {sum} DKK</h2>
       {props.basket.length > 0 && (
         <Link to="/kurv" onClick={props.closeSideBar}>
           <button>Videre til kassen</button>

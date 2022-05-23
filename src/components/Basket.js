@@ -21,7 +21,7 @@ export default (props) => {
       onOpen={handleIsOpen}
       onClose={handleIsOpen}
     >
-      <h2>Your basket:</h2>
+      <h2>Din indkøbskurv</h2>
       <ProductBasket
         basket={props.basket}
         setBasket={props.setBasket}

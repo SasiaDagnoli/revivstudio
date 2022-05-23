@@ -4,7 +4,6 @@ export default function FilterButtons({
   productsItem,
   products,
 }) {
-  console.log(productsItem);
   return (
     <>
       <div className="filterbuttons">
