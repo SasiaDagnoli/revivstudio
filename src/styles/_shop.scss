@@ -9,6 +9,13 @@
         margin-top: 0.5rem;
     }
 }
+
+.amount-counter {
+    position: fixed;
+    right: 32px;
+    top: 22px;
+    z-index: 1000;
+}
 .shop-section{
     display: grid;
     grid-template-columns: 1fr 1fr;

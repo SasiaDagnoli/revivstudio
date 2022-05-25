@@ -28,6 +28,7 @@ export default function Shop(props) {
         products={props.products}
         basket={props.basket}
         setBasket={props.setBasket}
+        amount={props.amount}
       ></Productlist>
     </div>
   );

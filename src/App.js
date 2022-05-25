@@ -23,6 +23,10 @@ function App() {
 
   const [basket, setBasket] = useState([]);
   const [deliveryState, setDelivery] = useState();
+  const initialValue = 0;
+  const amount = basket.reduce(function (p, c) {
+    return p + c.amount;
+  }, initialValue);
 
   const initialFormData = Object.freeze({
     company: "",
@@ -108,6 +112,7 @@ function App() {
                     products={products}
                     setBasket={setBasket}
                     basket={basket}
+                    amount={amount}
                   />
                 }
               />
