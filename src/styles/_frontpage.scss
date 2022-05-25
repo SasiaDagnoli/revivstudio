@@ -22,7 +22,7 @@
 }
 
 #first-section {
-    background-image: url(../../public/images/placeholder_background.jpg);
+    background-image: url(../../public/images/background_frontpage_mobile_2.jpg);
     height: 100vh;
     background-size: cover;
     background-position: center;
@@ -35,6 +35,8 @@
     }
 
     @media (min-width: 800px) {
+        background-image: url(../../public/images/background_frontpage_2.jpg);
+
         button {
             left: auto;
             right: 0;
