@@ -5,7 +5,7 @@ export default function Navigation() {
   return (
     <>
       <nav className="navigation">
-        <ul>
+        {/* <ul>
           <li>
             <Link to="/shop">Shop</Link>
           </li>
@@ -23,10 +23,14 @@ export default function Navigation() {
           <li>
             <Link to="/om-os">Om os</Link>
           </li>
-        </ul>
+        </ul> */}
         <div className="logo-container">
           <Link to="/">
-            <img src={`/images/logo_reviv.svg`} alt="logo" className="mobile-logo" />
+            <img
+              src={`/images/logo_reviv.svg`}
+              alt="logo"
+              className="mobile-logo"
+            />
           </Link>
         </div>
         <Burgermenu />

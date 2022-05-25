@@ -6,6 +6,12 @@
   img {
   padding-top: 20px;
   }
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    color: #C3B3AE;
+  }
 }
 
 .logo-container{
@@ -22,12 +28,18 @@
   }
   
   @media (min-width: 800px) {
-    .navigationlogo {
+    .navigation {
+      img {
+      padding-top: 0px;
+      width: 20%;
+      }
+    }
+    /* .navigationlogo {
       text-align: center;
     }
     .logo{
       width: 60%;
-    }
+    } */
     // .logo-container, .mobile-logo{
     //   display: none;
     // }
@@ -39,9 +51,9 @@
   //   display: none;
   // }
 
-  nav {
+ /*  nav {
     position: unset;
-  }
+  } */
 
   // .navigation {
 
