@@ -113,8 +113,11 @@ function App() {
               />
               <Route path="kollektioner" element={<Collections />} />
               <Route index element={<Frontpage products={products} />} />
-              <Route path="upcycling" element={<Upcycling />} />
-              <Route path="om-os" element={<About />} />
+              <Route
+                path="upcycling"
+                element={<Upcycling products={products} />}
+              />
+              <Route path="om-os" element={<About products={products} />} />
               <Route path="kurv" element={<Checkout basket={basket} />} />
               <Route
                 path="kontaktinfo"
