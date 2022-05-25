@@ -1,6 +1,10 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export default function Delivery(props) {
-  console.log(props.deliveryState);
+  let navigate = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate("/gennemse", { replace: true });
+  };
   return (
     <div>
       <div className="checkout-steps">
@@ -17,9 +21,10 @@ export default function Delivery(props) {
       </div>
       <section className="delivery-section">
         <h1>2. Forsendelsesmetode</h1>
-        <form action="">
+        <form onSubmit={handleSubmit}>
           <div className="form-control">
             <input
+              required
               type="radio"
               id="postnord-pakkeboks"
               name="delivery"
@@ -75,9 +80,10 @@ export default function Delivery(props) {
               <strong>39 Kr.</strong>
             </label>
           </div>
-          <Link to="/gennemse">
+          {/* <Link to="/gennemse">
             <button>→</button>
-          </Link>
+          </Link> */}
+          <button>Submit</button>
         </form>
       </section>
     </div>

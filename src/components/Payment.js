@@ -1,5 +1,10 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export default function Payment() {
+  let navigate = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate("/kvittering", { replace: true });
+  };
   return (
     <div>
       <div className="checkout-steps">
@@ -18,11 +23,15 @@ export default function Payment() {
       </div>
 
       <section className="payment-section">
-        <form action="">
+        <form onSubmit={handleSubmit}>
           <div className="form-control">
             <input type="radio" name="paymentmethod" id="mobilepay" />
             <label htmlFor="mobilepay">
-              <img className="mp-logo" src={`./images/mobilepay_logo_small.png`} alt="" />
+              <img
+                className="mp-logo"
+                src={`./images/mobilepay_logo_small.png`}
+                alt=""
+              />
             </label>
           </div>
           <div className="mobilepay-form">
@@ -37,15 +46,39 @@ export default function Payment() {
             <label htmlFor="name">Kortholders navn*</label>
             <input required minLength="1" autoFocus type="text" id="name" />
             <label htmlFor="cardnumber">Kortnummer*</label>
-            <input required type="tel" id="cardnumber" minLength="16" maxLength="16" inputMode="numeric" pattern="[0-9\s]{13,19}" />
+            <input
+              required
+              type="tel"
+              id="cardnumber"
+              minLength="16"
+              maxLength="16"
+              inputMode="numeric"
+              pattern="[0-9\s]{13,19}"
+            />
             <div className="expiry-cc-content">
               <div className="expiry-content">
                 <label htmlFor="expiry">Gyldig til*</label>
-                <input required type="text" id="expiry" pattern="([0-9]{2}+[/]+?){2}" placeholder="MM/ÅÅ" minLength="4" maxLength="4" inputMode="numeric" />
+                <input
+                  required
+                  type="text"
+                  id="expiry"
+                  pattern="([0-9]{2}+[/]+?){2}"
+                  placeholder="MM/ÅÅ"
+                  minLength="4"
+                  maxLength="4"
+                  inputMode="numeric"
+                />
               </div>
               <div className="cc-content">
                 <label htmlFor="cc">Kontrolcifre*</label>
-                <input required type="text" id="cc" minLength="3" maxLength="3" inputMode="numeric" />
+                <input
+                  required
+                  type="text"
+                  id="cc"
+                  minLength="3"
+                  maxLength="3"
+                  inputMode="numeric"
+                />
               </div>
             </div>
           </div>
@@ -54,9 +87,10 @@ export default function Payment() {
             <label htmlFor="bankoverførsel">Bankoverførsel</label>
           </div> */}
 
-          <Link to="/kvittering">
+          {/* <Link to="/kvittering">
             <input type="submit" />
-          </Link>
+          </Link> */}
+          <button>Submit</button>
         </form>
       </section>
     </div>

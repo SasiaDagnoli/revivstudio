@@ -1,5 +1,10 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export default function ApproveOrder(props) {
+  let navigate = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate("/betaling", { replace: true });
+  };
   const number = parseInt(props.deliveryState);
   const mapped = props.basket.map((product, index) => (
     <article>
@@ -74,9 +79,9 @@ export default function ApproveOrder(props) {
           <p>
             <strong>Klik her for at læse vores persondatapolitik</strong>
           </p>
-          <form action="">
+          <form onSubmit={handleSubmit}>
             <div className="form-control">
-              <input type="checkbox" id="accept" />
+              <input required type="checkbox" id="accept" />
               <label htmlFor="accept">Jeg accepterer</label>
             </div>
             <div className="form-control">
@@ -86,9 +91,10 @@ export default function ApproveOrder(props) {
                 spændende nyheder.
               </label>
             </div>
-            <Link to="/betaling">
+            {/* <Link to="/betaling">
               <button>→</button>
-            </Link>
+            </Link> */}
+            <button>Submit</button>
           </form>
         </div>
       </section>
