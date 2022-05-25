@@ -10,3 +10,41 @@
     display: block;
     max-height: 500px;
 }
+
+.payment-section{
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+
+    input[type=text], input[type=tel] {
+        background-color: transparent;
+        border: 1.5px solid #473832;
+        height: 2.6rem;
+        margin-bottom: 20px;
+       
+    }
+
+    .mp-logo{
+        width: 50%;
+    }
+
+    .card-form, .mobilepay-form{
+        display: flex;
+        flex-direction: column;
+    
+        #cc{
+            width: 70%;
+        }
+        .expiry-cc-content{
+            display: flex;
+            gap: 20px;
+        }
+        .expiry-content, .cc-content{
+            display: flex;
+            flex-direction: column;
+            
+        
+        }
+    }
+}
+
