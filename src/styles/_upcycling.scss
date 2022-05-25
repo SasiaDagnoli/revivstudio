@@ -1,0 +1,19 @@
+.upcycling-first-section{
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto  ;
+    p{
+        font-size: 20px;
+    }
+    img{
+        width: 100%;
+    }
+
+    @media (min-width: 800px) {
+        .upcycling-content{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+       
+    }
+}
