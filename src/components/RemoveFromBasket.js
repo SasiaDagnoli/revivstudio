@@ -25,7 +25,7 @@ export default function RemoveFromBasket(props) {
   return (
     <div>
       <button className="remove-from-basket-btn" onClick={handleClickRemove}>
-        🗑
+        <img src={`./images/trash.png`} alt="" />
       </button>
     </div>
   );

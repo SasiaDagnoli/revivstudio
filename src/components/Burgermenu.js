@@ -13,12 +13,7 @@ export default function Burgermenu() {
   };
   return (
     <div id="burger-menu-button">
-      <Menu
-        className="new-burger"
-        isOpen={isOpen}
-        onOpen={handleIsOpen}
-        onClose={handleIsOpen}
-      >
+      <Menu customBurgerIcon={<img src={`./images/burgericon.png`} />} className="new-burger" isOpen={isOpen} onOpen={handleIsOpen} onClose={handleIsOpen}>
         <li>
           <Link to="/shop" onClick={closeSideBar}>
             Shop

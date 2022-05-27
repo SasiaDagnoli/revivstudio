@@ -8,6 +8,10 @@
     cursor: pointer;
   }
 }
+// .bm-icon{
+//   width: 3rem !important;
+//   height: 3rem !important;
+// }
 #Basket {
     background-color: white;
     position: relative;
@@ -33,6 +37,10 @@
   .remove-from-basket-btn{
    border: none;
    background-color: transparent;
+
+   img{
+     width: 25px;
+   }
     
   }
   #Basket > * {

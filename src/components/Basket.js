@@ -14,18 +14,9 @@ export default (props) => {
     setOpen(false);
   };
   return (
-    <Basket
-      className="basket"
-      right
-      isOpen={isOpen}
-      onOpen={handleIsOpen}
-      onClose={handleIsOpen}
-    >
+    <Basket customBurgerIcon={<img src={`./images/shoppingbag.png`} />} className="basket" right isOpen={isOpen} onOpen={handleIsOpen} onClose={handleIsOpen}>
       <h2>Din indkøbskurv</h2>
-      <ProductBasket
-        basket={props.basket}
-        setBasket={props.setBasket}
-      ></ProductBasket>
+      <ProductBasket basket={props.basket} setBasket={props.setBasket}></ProductBasket>
       <MyBasket basket={props.basket} closeSideBar={closeSideBar} />
       {/* <RemoveFromBasket product={props.product} basket={props.basket} setBasket={props.setBasket} /> */}
     </Basket>
