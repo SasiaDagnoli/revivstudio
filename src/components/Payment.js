@@ -27,11 +27,7 @@ export default function Payment() {
           <div className="form-control">
             <input type="radio" name="paymentmethod" id="mobilepay" />
             <label htmlFor="mobilepay">
-              <img
-                className="mp-logo"
-                src={`./images/mobilepay_logo_small.png`}
-                alt=""
-              />
+              <img className="mp-logo" src={`./images/mobilepay_logo_small.png`} alt="" />
             </label>
           </div>
           <div className="mobilepay-form">
@@ -44,10 +40,16 @@ export default function Payment() {
           </div>
           <div className="card-form">
             <label htmlFor="name">Kortholders navn*</label>
-            <input required minLength="1" autoFocus type="text" id="name" />
+            <input
+              // required
+              minLength="1"
+              autoFocus
+              type="text"
+              id="name"
+            />
             <label htmlFor="cardnumber">Kortnummer*</label>
             <input
-              required
+              // required
               type="tel"
               id="cardnumber"
               minLength="16"
@@ -59,7 +61,7 @@ export default function Payment() {
               <div className="expiry-content">
                 <label htmlFor="expiry">Gyldig til*</label>
                 <input
-                  required
+                  // required
                   type="text"
                   id="expiry"
                   pattern="([0-9]{2}+[/]+?){2}"
@@ -72,7 +74,7 @@ export default function Payment() {
               <div className="cc-content">
                 <label htmlFor="cc">Kontrolcifre*</label>
                 <input
-                  required
+                  // required
                   type="text"
                   id="cc"
                   minLength="3"

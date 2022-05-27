@@ -50,7 +50,7 @@ export default function ContactInfo(props) {
           <label>
             Fulde navn
             <input
-              required
+              // required
               type="text"
               name="fullname"
               onChange={handleChange}
@@ -59,7 +59,7 @@ export default function ContactInfo(props) {
           <label>
             Adresse
             <input
-              required
+              // required
               type="text"
               name="address"
               onChange={handleChange}
@@ -68,7 +68,7 @@ export default function ContactInfo(props) {
           <label>
             Land
             <input
-              required
+              // required
               type="text"
               name="country"
               onChange={handleChange}
@@ -76,11 +76,21 @@ export default function ContactInfo(props) {
           </label>
           <label>
             Telefon
-            <input required type="text" name="phone" onChange={handleChange} />
+            <input
+              // required
+              type="text"
+              name="phone"
+              onChange={handleChange}
+            />
           </label>
           <label>
             E-mail
-            <input required type="text" name="email" onChange={handleChange} />
+            <input
+              // required
+              type="text"
+              name="email"
+              onChange={handleChange}
+            />
           </label>
           <label>
             Notat
