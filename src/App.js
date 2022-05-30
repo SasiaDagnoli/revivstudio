@@ -74,21 +74,78 @@ function App() {
   return (
     <div className="App" id="outer-container">
       <div id="page-wrap">
+        <p className="amount-counter">{amount}</p>
         <BrowserRouter>
-          <Basket pageWrapId={"page-wrap"} outerContainerId={"outer-container"} setBasket={setBasket} basket={basket}></Basket>
+          <Basket
+            pageWrapId={"page-wrap"}
+            outerContainerId={"outer-container"}
+            setBasket={setBasket}
+            basket={basket}
+          ></Basket>
           <Routes>
             <Route path="/" element={<Navigation />}>
-              <Route path="shop" element={<Shop products={products} setBasket={setBasket} basket={basket} amount={amount} />} />
+              <Route
+                path="shop"
+                element={
+                  <Shop
+                    products={products}
+                    setBasket={setBasket}
+                    basket={basket}
+                  />
+                }
+              />
               <Route index element={<Frontpage products={products} />} />
-              <Route path="upcycling" element={<Upcycling products={products} />} />
+              <Route
+                path="upcycling"
+                element={<Upcycling products={products} />}
+              />
               <Route path="om-os" element={<About products={products} />} />
               <Route path="kurv" element={<Checkout basket={basket} />} />
-              <Route path="kontaktinfo" element={<ContactInfo basket={basket} formData={formData} updateFormData={updateFormData} />}></Route>
-              <Route path="levering" element={<Delivery basket={basket} formData={formData} deliveryState={deliveryState} setDelivery={setDelivery} />}></Route>
-              <Route path="gennemse" element={<ApproveOrder basket={basket} deliveryState={deliveryState} />}></Route>
-              <Route path="betaling" element={<Payment basket={basket} />}></Route>
-              <Route path="kvittering" element={<Receipt basket={basket} formData={formData} deliveryState={deliveryState} />}></Route>
-              <Route path="produkt/:id" element={<SingleView setBasket={setBasket} basket={basket} />} />
+              <Route
+                path="kontaktinfo"
+                element={
+                  <ContactInfo
+                    basket={basket}
+                    formData={formData}
+                    updateFormData={updateFormData}
+                  />
+                }
+              ></Route>
+              <Route
+                path="levering"
+                element={
+                  <Delivery
+                    basket={basket}
+                    formData={formData}
+                    deliveryState={deliveryState}
+                    setDelivery={setDelivery}
+                  />
+                }
+              ></Route>
+              <Route
+                path="gennemse"
+                element={
+                  <ApproveOrder basket={basket} deliveryState={deliveryState} />
+                }
+              ></Route>
+              <Route
+                path="betaling"
+                element={<Payment basket={basket} />}
+              ></Route>
+              <Route
+                path="kvittering"
+                element={
+                  <Receipt
+                    basket={basket}
+                    formData={formData}
+                    deliveryState={deliveryState}
+                  />
+                }
+              ></Route>
+              <Route
+                path="produkt/:id"
+                element={<SingleView setBasket={setBasket} basket={basket} />}
+              />
             </Route>
           </Routes>
         </BrowserRouter>

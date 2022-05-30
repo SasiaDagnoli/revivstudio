@@ -48,9 +48,126 @@ export default function Upcycling(props) {
           />
         </div>
       </section>
-      <section>
+      <section className="sendjewellery-section">
         <h2>Her kan du aflevere dine smykker</h2>
-        <p></p>
+        <div>
+          <input
+            type="checkbox"
+            id="copenhagenAccordion"
+            className="dropDown_btn_adress"
+          />
+          <label
+            htmlFor="copenhagenAccordion"
+            className="dropDown_label_address"
+          >
+            <p>Sjælland</p>
+          </label>
+          <div className="addresslist">
+            <div>
+              <p>
+                <strong>Det Kollektive Klædeskab</strong>
+              </p>
+              <p>
+                Egilsgade 34 <br /> 2300 København S
+              </p>
+              <p>
+                Peter Fabers Gade 42 <br /> 2200 København N
+              </p>
+              <p>
+                Estlandsgade 20 <br /> 1724 København V
+              </p>
+              <p>
+                Karen Olsdatter Stræde 4A <br /> 4000 Roskilde
+              </p>
+              <p>
+                Østergade 8b, st. th <br /> 4180 Sorø
+              </p>
+            </div>
+            <div>
+              <p>
+                <strong>Nærmere Dig - Din Helsekost</strong>
+              </p>
+              <p>
+                Islands Brygge 25 <br /> 2300 København S
+              </p>
+              <p>
+                <strong>Muttilove</strong>
+              </p>
+              <p>
+                Birkegade 9 <br /> 2200 København N
+              </p>
+              <p>
+                <strong>Green Living</strong>
+              </p>
+              <p>
+                Nørrebrogade 218 <br /> 2200 København N
+              </p>
+            </div>
+            <div>
+              <p>
+                <strong>Wøn</strong>
+              </p>
+              <p>
+                Frederiksberg Allé 37 <br /> 1820 Frederiksberg
+              </p>
+              <p>
+                <strong>LØS Market</strong>
+              </p>
+              <p>
+                Nordre Frihavnsgade 21 <br /> 2100 København Ø
+              </p>
+              <p>
+                <strong>Tapirus Secondhand</strong>
+              </p>
+              <p>
+                Amagerbrogade 48 <br /> 2300 København S
+              </p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            id="fynAccordion"
+            className="dropDown_btn_adress"
+          />
+          <label htmlFor="fynAccordion" className="dropDown_label_address">
+            <p>Fyn</p>
+          </label>
+          <div className="addresslist">
+            <div>
+              <p>
+                <strong>Det Kollektive Klædeskab</strong>
+              </p>
+              <p>
+                Nedergade 26 <br /> 5000 Odense
+              </p>
+              <p>
+                Korsgade 12 <br /> 5700 Svendborg
+              </p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            id="jyllandAccordion"
+            className="dropDown_btn_adress"
+          />
+          <label htmlFor="jyllandAccordion" className="dropDown_label_address">
+            <p>Jylland</p>
+          </label>
+          <div className="addresslist">
+            <div>
+              <p>
+                <strong>Det Kollektive Klædeskab</strong>
+              </p>
+              <p>
+                Vestergade 58T <br /> 8000 Aarhus
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
       <section className="explore-section">
         <h2>Gå på opdagelse</h2>

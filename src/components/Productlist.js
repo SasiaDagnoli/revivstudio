@@ -36,7 +36,6 @@ export default function Productlist(props) {
 
   return (
     <div>
-      <p className="amount-counter">{props.amount}</p>
       <section className="filter-buttons">
         <FilterButtons
           filterProducts={filterProducts}

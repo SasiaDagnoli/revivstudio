@@ -9,6 +9,39 @@
     .upcycling_img{
         display: none;
     }
+}
+
+.sendjewellery-section {
+    h2{
+        text-align: center;
+    }
+}
+
+.dropDown_btn_adress {
+    display: none;
+}
+
+
+    .dropDown_label_address {
+        p {
+            text-align: center;
+        }
+    }
+
+    .addresslist {
+        gap: 25px;
+        overflow: hidden;
+        max-height: 0;
+        transition: all .5s ease-in-out;
+        padding: 0 24px;
+        text-align: center;
+    }
+
+    .dropDown_btn_adress:checked ~ .addresslist {
+        gap: 25px;
+        max-height: 1500px;
+    }
+
 
     @media (min-width: 800px) {
         .upcycling-content{
@@ -23,6 +56,22 @@
             display: block;
             width: 100%;
         }
+
+        .sendjewellery-section {
+            h2{
+                font-size: 2.8rem;
+                margin-top: 3rem;
+            }
+        }
+
+        .dropDown_btn_adress:checked ~ .addresslist {
+            display: flex;
+            justify-content: center; 
+        }
+
+        .addresslist {
+            display: flex;
+            justify-content: center;
+        }
        
     }
-}
