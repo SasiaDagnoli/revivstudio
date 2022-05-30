@@ -24,9 +24,9 @@ button{
 
 @media (min-width: 800px) {
     .single-section{
-        img{
+        /* img{
             width: 70%;
-        }
+        } */
         h1{
             font-size: 2.2rem;
         }
@@ -46,5 +46,9 @@ button{
         .pick-up-text{
             margin-bottom: 3rem;
         }
+    }
+
+    .swiper {
+        width: 50%;
     }
 }
