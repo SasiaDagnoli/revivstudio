@@ -31,7 +31,10 @@ export default function SingleView({ basket, setBasket }) {
     <div className="product">
       {product ? (
         <section className="single-section">
-          <img src={`/images/${product.imagename}`} alt={product.productname} />
+          <img
+            src={`/images/productimages/${product.imagename}`}
+            alt={product.productname}
+          />
           <h1>{product.productname}</h1>
           <h2>Normalpris {product.price} KR.</h2>
           <p>Inklusiv moms. Levering beregnes ved betaling.</p>
