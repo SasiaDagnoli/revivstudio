@@ -1,3 +1,9 @@
+input[type=submit], .next-btn{
+    background-color: #C3B3AE;
+    border: none;
+    height: 2rem;
+    width: 3rem;
+}
 .checkout-section{
    width: 80vw;
    margin-left: auto;
@@ -15,8 +21,37 @@
         }
     
     }
+    input[type=text]{
+        width: 80%;
+        height: 2rem;
+        margin-bottom: 2rem;
+        margin-top: 3rem;
+        margin-right: 0.5rem;
+        background-color: white;
+        border: none;
+        padding: 0;
+
+        // border: 1.5px solid #473832;
+    }
     .delivery-info, .price-info{
         display: flex;
         justify-content: space-between;
+    }
+
+    @media (min-width: 800px){
+        article{
+            img{
+                width: 70%;
+                padding-left: 4rem;
+            }
+            h2{
+                font-size: 2rem;
+            }
+        }
+        input[type=text]{
+            width: 40%;
+            margin-right: 1.5rem;
+        }
+       
     }
 }

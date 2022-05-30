@@ -43,10 +43,10 @@ export default function ContactInfo(props) {
     return (
       <>
         <form onSubmit={handleSubmit}>
-          <label>
-            Firma
+          <div className="form-control">
+            <label>Firma</label>
             <input type="text" name="company" onChange={handleChange} />
-          </label>
+          </div>
           <label>
             Fulde navn
             <input
@@ -119,8 +119,9 @@ export default function ContactInfo(props) {
       </div>
       <section className="contactinfo-section">
         <h1>1. Kontaktoplysninger</h1>
-
-        <CustomerInformation basket={props.basket}></CustomerInformation>
+        <section className="form-section">
+          <CustomerInformation basket={props.basket}></CustomerInformation>
+        </section>
 
         {/*  <form action="">
           <label htmlFor="company">Firma</label>

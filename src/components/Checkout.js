@@ -21,8 +21,11 @@ export default function Checkout(props) {
       <h1>Gennemfør ordre</h1>
       <section className="">{mapped}</section>
 
-      <input type="text" id="promo-code" placeholder="Rabatkode" />
-      <input type="submit" id="submit-promo" value="→" />
+      <div className="promo-code">
+        <input type="text" id="promo-code" placeholder="Rabatkode" />
+        <input type="submit" id="submit-promo" value="→" />
+      </div>
+
       <hr />
       <div className="delivery-info">
         <p>Levering: </p>
@@ -34,7 +37,7 @@ export default function Checkout(props) {
         <p>{sum} Kr.</p>
       </div>
       <Link to="/kontaktinfo">
-        <button>→</button>
+        <button className="next-btn">→</button>
       </Link>
     </div>
   );
