@@ -65,7 +65,9 @@ export default function Frontpage(props) {
           {popularArray.map((img, i) => {
             return (
               <SwiperSlide key={i}>
-                <img src={`/images/productimages/${img.imagename}`} alt="" />
+                <Link to={`/produkt/${img._id}`}>
+                  <img src={`/images/productimages/${img.imagename}`} alt="" />
+                </Link>
               </SwiperSlide>
             );
           })}
@@ -75,8 +77,16 @@ export default function Frontpage(props) {
       <section className="upcycling-section">
         <h2>Aflever dine smykker</h2>
         <div className="image-container">
-          <img className="customerjourney_mobile" src={`./images/kunderejsen_mobile.png`} alt="" />
-          <img className="customerjourney_web" src={`./images/kunderejsen_web.png`} alt="" />
+          <img
+            className="customerjourney_mobile"
+            src={`./images/kunderejsen_mobile.png`}
+            alt=""
+          />
+          <img
+            className="customerjourney_web"
+            src={`./images/kunderejsen_web.png`}
+            alt=""
+          />
         </div>
       </section>
       <section className="explore-section">
@@ -109,7 +119,12 @@ export default function Frontpage(props) {
           {exploreArray.map((imgExplore, index) => {
             return (
               <SwiperSlide key={index}>
-                <img src={`/images/productimages/${imgExplore.imagename}`} alt="" />
+                <Link to={`/produkt/${imgExplore._id}`}>
+                  <img
+                    src={`/images/productimages/${imgExplore.imagename}`}
+                    alt=""
+                  />
+                </Link>
               </SwiperSlide>
             );
           })}

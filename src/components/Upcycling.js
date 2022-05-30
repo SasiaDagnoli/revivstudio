@@ -3,6 +3,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper";
+import { Link } from "react-router-dom";
 export default function Upcycling(props) {
   const exploreArray = [];
   props.products.forEach((product) => {
@@ -16,15 +17,35 @@ export default function Upcycling(props) {
         <h1>Aflever dine smykker</h1>
         <div className="upcycling-content">
           <p>
-            Réviv Studio skaber nye tidløse designs med materialer fra smykker, der ikke længere bruges. Dette kan f.eks. være fordi de er gået af mode, fordi ejeren ikke kan lide dem længere, eller fordi smykkerne er i stykker. På den måde kommer
-            materialerne i cirkulation igen, og går ikke til spilde. <br /> <br /> Noget af det bedste vi kan gøre i klimaets navn indenfor smykkebranchen, er at genanvende materialer, så der ikke skal trækkes nye op af jorden. <br /> <br /> Derfor
-            modtager vi hjertens gerne dine gamle smykker, og bruger materialerne til at lave nye, spændende designs. Som tak for din hjælp vil du altid modtage en rabatkode til vores webshops, der som minimum giver 10% rabat.
+            Réviv Studio skaber nye tidløse designs med materialer fra smykker,
+            der ikke længere bruges. Dette kan f.eks. være fordi de er gået af
+            mode, fordi ejeren ikke kan lide dem længere, eller fordi smykkerne
+            er i stykker. På den måde kommer materialerne i cirkulation igen, og
+            går ikke til spilde. <br /> <br /> Noget af det bedste vi kan gøre i
+            klimaets navn indenfor smykkebranchen, er at genanvende materialer,
+            så der ikke skal trækkes nye op af jorden. <br /> <br /> Derfor
+            modtager vi hjertens gerne dine gamle smykker, og bruger
+            materialerne til at lave nye, spændende designs. Som tak for din
+            hjælp vil du altid modtage en rabatkode til vores webshops, der som
+            minimum giver 10% rabat.
           </p>
-          <img src={`./images/upcycling_img.jpg`} alt="" className="upcycling_img" />
+          <img
+            src={`./images/upcycling_img.jpg`}
+            alt=""
+            className="upcycling_img"
+          />
         </div>
         <div className="image-container">
-          <img src={`./images/kunderejsen_mobile.png`} alt="" className="customerjourney_mobile" />
-          <img src={`./images/kunderejsen_web.png`} alt="" className="customerjourney_web" />
+          <img
+            src={`./images/kunderejsen_mobile.png`}
+            alt=""
+            className="customerjourney_mobile"
+          />
+          <img
+            src={`./images/kunderejsen_web.png`}
+            alt=""
+            className="customerjourney_web"
+          />
         </div>
       </section>
       <section>
@@ -61,7 +82,12 @@ export default function Upcycling(props) {
           {exploreArray.map((imgExplore, index) => {
             return (
               <SwiperSlide key={index}>
-                <img src={`/images/productimages/${imgExplore.imagename}`} alt="" />
+                <Link to={`/produkt/${imgExplore._id}`}>
+                  <img
+                    src={`/images/productimages/${imgExplore.imagename}`}
+                    alt=""
+                  />
+                </Link>
               </SwiperSlide>
             );
           })}
