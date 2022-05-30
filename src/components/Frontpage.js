@@ -31,7 +31,7 @@ export default function Frontpage(props) {
           <button>Shop Nu</button>
         </Link>
       </section>
-      <section>
+      <section className="popular-section">
         <h1>Populære produkter</h1>
         <Swiper
           breakpoints={{
@@ -72,16 +72,15 @@ export default function Frontpage(props) {
         </Swiper>
         <div className="custom-pagination"></div>
       </section>
-      <section>
-        <h1>Aflever dine smykker</h1>
-        <img
-          className="customerjourney"
-          src={`./images/kunderejse.png`}
-          alt=""
-        />
+      <section className="upcycling-section">
+        <h2>Aflever dine smykker</h2>
+        <div className="image-container">
+          <img className="customerjourney_mobile" src={`./images/kunderejsen_mobile.png`} alt="" />
+          <img className="customerjourney_web" src={`./images/kunderejsen_web.png`} alt="" />
+        </div>
       </section>
-      <section>
-        <h1>Gå på opdagelse</h1>
+      <section className="explore-section">
+        <h2>Gå på opdagelse</h2>
         <Swiper
           breakpoints={{
             640: {
@@ -110,10 +109,7 @@ export default function Frontpage(props) {
           {exploreArray.map((imgExplore, index) => {
             return (
               <SwiperSlide key={index}>
-                <img
-                  src={`/images/productimages/${imgExplore.imagename}`}
-                  alt=""
-                />
+                <img src={`/images/productimages/${imgExplore.imagename}`} alt="" />
               </SwiperSlide>
             );
           })}
