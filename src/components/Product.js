@@ -7,7 +7,7 @@ export default function Product(props) {
     <article className="product">
       <Link to={`/produkt/${props.product._id}`}>
         <img
-          src={`./images/${props.product.imagename}`}
+          src={`./images/productimages/${props.product.imagename}`}
           alt={props.product.productname}
         />
         <h2>{props.product.productname}</h2>

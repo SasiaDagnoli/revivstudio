@@ -65,7 +65,7 @@ export default function Frontpage(props) {
           {popularArray.map((img, i) => {
             return (
               <SwiperSlide key={i}>
-                <img src={`/images/${img.imagename}`} alt="" />
+                <img src={`/images/productimages/${img.imagename}`} alt="" />
               </SwiperSlide>
             );
           })}
@@ -110,7 +110,10 @@ export default function Frontpage(props) {
           {exploreArray.map((imgExplore, index) => {
             return (
               <SwiperSlide key={index}>
-                <img src={`/images/${imgExplore.imagename}`} alt="" />
+                <img
+                  src={`/images/productimages/${imgExplore.imagename}`}
+                  alt=""
+                />
               </SwiperSlide>
             );
           })}
