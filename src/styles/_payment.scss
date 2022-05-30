@@ -10,7 +10,6 @@
     display: block;
     max-height: 500px;
 }
-
 .payment-section{
     width: 80vw;
     margin-left: auto;
@@ -45,6 +44,22 @@
             
         
         }
+    }
+    h1{
+        font-size: 2rem;
+        padding-top: 1rem;
+    }
+}
+
+.mobilepay-div {
+    display: flex;
+    align-items: center;
+}
+
+@media (min-width: 800px) {
+    .payment-section {
+        width: 50vw;
+       
     }
 }
 

@@ -3,7 +3,7 @@ import Product from "./Product";
 export default function Checkout(props) {
   const mapped = props.basket.map((product, index) => (
     <article>
-      <img src={`./images/${product.imagename}`} alt="" />
+      <img src={`./images/productimages/${product.imagename}`} alt="" />
       <div>
         <h2>{product.productname}</h2>
         <p>Antal: {product.amount}</p>
@@ -18,8 +18,8 @@ export default function Checkout(props) {
   }, initialValue);
   return (
     <div className="checkout-section">
-      <h1>Gennemfør ordre</h1>
-      <section className="">{mapped}</section>
+      <h1>Din indkøbskurv</h1>
+      <section className="items-in-basket">{mapped}</section>
 
       <div className="promo-code">
         <input type="text" id="promo-code" placeholder="Rabatkode" />

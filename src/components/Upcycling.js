@@ -20,14 +20,18 @@ export default function Upcycling(props) {
             materialerne i cirkulation igen, og går ikke til spilde. <br /> <br /> Noget af det bedste vi kan gøre i klimaets navn indenfor smykkebranchen, er at genanvende materialer, så der ikke skal trækkes nye op af jorden. <br /> <br /> Derfor
             modtager vi hjertens gerne dine gamle smykker, og bruger materialerne til at lave nye, spændende designs. Som tak for din hjælp vil du altid modtage en rabatkode til vores webshops, der som minimum giver 10% rabat.
           </p>
-          <img src={`./images/kunderejsen_web.png`} alt="" className="background-image" />
+          <img src={`./images/upcycling_img.jpg`} alt="" className="upcycling_img" />
+        </div>
+        <div className="image-container">
+          <img src={`./images/kunderejsen_mobile.png`} alt="" className="customerjourney_mobile" />
+          <img src={`./images/kunderejsen_web.png`} alt="" className="customerjourney_web" />
         </div>
       </section>
       <section>
         <h2>Her kan du aflevere dine smykker</h2>
         <p></p>
       </section>
-      <section>
+      <section className="explore-section">
         <h2>Gå på opdagelse</h2>
         <Swiper
           breakpoints={{
@@ -57,7 +61,7 @@ export default function Upcycling(props) {
           {exploreArray.map((imgExplore, index) => {
             return (
               <SwiperSlide key={index}>
-                <img src={`/images/${imgExplore.imagename}`} alt="" />
+                <img src={`/images/productimages/${imgExplore.imagename}`} alt="" />
               </SwiperSlide>
             );
           })}

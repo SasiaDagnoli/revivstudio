@@ -15,10 +15,10 @@ export default function Receipt(props) {
           De bedste hilsner <br />
           Sarah
         </p>
+        <Link to="/">
+          <button className="submit-btn">Tilbage til forsiden</button>
+        </Link>
       </section>
-      <Link to="/">
-        <button>Tilbage til forsiden</button>
-      </Link>
     </div>
   );
 }

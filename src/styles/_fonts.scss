@@ -10,6 +10,7 @@ h1, h2, h3, a{
 }
 
 h1 {
+    padding-top: 6rem;
     font-size: 2.3rem;
     text-align: center;
 }
@@ -32,6 +33,7 @@ p, ::placeholder, label, button {
 
 @media (min-width: 800px){
     h1{
+        padding-top: 9rem;
         font-size: 4.5rem;
     }
 }

@@ -7,24 +7,22 @@ export default function Payment() {
   };
   return (
     <div>
-      <div className="checkout-steps">
-        <ul>
-          <li>Indkøbskurv →</li>
-          <li>
-            <strong>Oplysninger →</strong>
-          </li>
-          <li>Levering →</li>
-
-          <li>Gennemgå →</li>
-          <li>
-            <strong>Betaling</strong>
-          </li>
-        </ul>
-      </div>
-
       <section className="payment-section">
+        <div className="checkout-steps">
+          <ul>
+            <li>Indkøbskurv →</li>
+            <li>Oplysninger →</li>
+            <li>Levering →</li>
+
+            <li>Gennemgå →</li>
+            <li>
+              <strong>Betaling</strong>
+            </li>
+          </ul>
+        </div>
+        <h1>4. Betaling</h1>
         <form onSubmit={handleSubmit}>
-          <div className="form-control">
+          <div className="form-control mobilepay-div">
             <input type="radio" name="paymentmethod" id="mobilepay" />
             <label htmlFor="mobilepay">
               <img className="mp-logo" src={`./images/mobilepay_logo_small.png`} alt="" />
@@ -84,15 +82,8 @@ export default function Payment() {
               </div>
             </div>
           </div>
-          {/* <div className="form-control">
-            <input type="radio" name="paymentmethod" id="bankoverførsel" />
-            <label htmlFor="bankoverførsel">Bankoverførsel</label>
-          </div> */}
 
-          {/* <Link to="/kvittering">
-            <input type="submit" />
-          </Link> */}
-          <button>Submit</button>
+          <button className="submit-btn">Gennemfør køb</button>
         </form>
       </section>
     </div>

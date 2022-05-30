@@ -97,7 +97,7 @@ export default function ContactInfo(props) {
             <input type="text" name="note" onChange={handleChange} />
           </label>
 
-          <button>Submit</button>
+          <button className="submit-btn">→</button>
         </form>
       </>
     );
@@ -105,55 +105,23 @@ export default function ContactInfo(props) {
 
   return (
     <div>
-      <div className="checkout-steps">
-        <ul>
-          <li>Indkøbskurv →</li>
-          <li>
-            <strong>Oplysninger →</strong>
-          </li>
-          <li>Levering →</li>
-
-          <li>Gennemgå →</li>
-          <li>Betaling </li>
-        </ul>
-      </div>
       <section className="contactinfo-section">
+        <div className="checkout-steps">
+          <ul>
+            <li>Indkøbskurv →</li>
+            <li>
+              <strong>Oplysninger →</strong>
+            </li>
+            <li>Levering →</li>
+
+            <li>Gennemgå →</li>
+            <li>Betaling </li>
+          </ul>
+        </div>
         <h1>1. Kontaktoplysninger</h1>
         <section className="form-section">
           <CustomerInformation basket={props.basket}></CustomerInformation>
         </section>
-
-        {/*  <form action="">
-          <label htmlFor="company">Firma</label>
-          <input name="company" type="text" id="company" />
-
-          <label htmlFor="name">Fulde navn</label>
-          <input name="fullname" type="text" id="name" />
-
-          <label htmlFor="adress">Adresse</label>
-          <input name="address" type="text" id="adress" />
-
-          <label htmlFor="country">Land</label>
-          <input name="country" type="text" id="country" />
-
-          <label htmlFor="telephone">Telefon</label>
-          <input name="phone" type="tel" id="telephone" minLength={8} />
-
-          <label htmlFor="email">Email</label>
-          <input name="email" type="email" id="email" />
-
-          <label htmlFor="notes">Notat</label>
-          <input name="note" type="text" id="notes" />
-
-          <div className="other-adress-check">
-            <input type="checkbox" id="other-adress" />
-            <label htmlFor="other-adress">Levering til anden adresse</label>
-          </div>
-
-          <Link to="/levering">
-            <button>→</button>
-          </Link>
-        </form> */}
       </section>
     </div>
   );

@@ -5,32 +5,9 @@ export default function Navigation() {
   return (
     <>
       <nav className="navigation">
-        {/* <ul>
-          <li>
-            <Link to="/shop">Shop</Link>
-          </li>
-          <li>
-            <Link to="/kollektioner">Kollektioner</Link>
-          </li>
-          <li className="navigationlogo">
-            <Link to="/">
-              <img src={`/images/logo_reviv.svg`} alt="logo" className="logo" />
-            </Link>
-          </li>
-          <li>
-            <Link to="/upcycling">Upcycling</Link>
-          </li>
-          <li>
-            <Link to="/om-os">Om os</Link>
-          </li>
-        </ul> */}
         <div className="logo-container">
           <Link to="/">
-            <img
-              src={`/images/logo_reviv.svg`}
-              alt="logo"
-              className="mobile-logo"
-            />
+            <img src={`/images/logo_reviv.svg`} alt="logo" className="mobile-logo" />
           </Link>
         </div>
         <Burgermenu />

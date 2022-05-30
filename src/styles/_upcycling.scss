@@ -5,14 +5,23 @@
     p{
         font-size: 20px;
     }
-    img{
-        width: 100%;
+    
+    .upcycling_img{
+        display: none;
     }
 
     @media (min-width: 800px) {
         .upcycling-content{
             display: grid;
             grid-template-columns: 1fr 1fr;
+            column-gap: 2rem;
+        }
+        .customerjourney_web{
+            margin-top: 4rem;
+        }
+        .upcycling_img{
+            display: block;
+            width: 100%;
         }
        
     }

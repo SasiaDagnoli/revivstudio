@@ -15,19 +15,20 @@ export default function Burgermenu() {
     <div id="burger-menu-button">
       <Menu customBurgerIcon={<img src={`./images/burgericon.png`} />} className="new-burger" isOpen={isOpen} onOpen={handleIsOpen} onClose={handleIsOpen}>
         <li>
-          <Link to="/shop" onClick={closeSideBar}>
-            Shop
+          <Link to="/" onClick={closeSideBar}>
+            Forside
           </Link>
         </li>
+
         <li>
-          <Link to="/kollektioner" onClick={closeSideBar}>
-            Kollektioner
+          <Link to="/shop" onClick={closeSideBar}>
+            Shop
           </Link>
         </li>
 
         <li>
           <Link to="/upcycling" onClick={closeSideBar}>
-            Upcycling
+            Send smykker til upcycling
           </Link>
         </li>
         <li>

@@ -4,9 +4,16 @@
     margin-right: auto;
     h1{
         font-size: 2rem;
+        padding-top: 1rem;
     }
     .order-price-calc, .order-price-total{
         display: flex;
         justify-content: space-between;
+    }
+}
+
+@media (min-width: 800px) {
+    .approve-section {
+        width: 60vw;
     }
 }

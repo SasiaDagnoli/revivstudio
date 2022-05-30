@@ -8,7 +8,7 @@ export default function ApproveOrder(props) {
   const number = parseInt(props.deliveryState);
   const mapped = props.basket.map((product, index) => (
     <article>
-      <img src={`./images/${product.imagename}`} alt="" />
+      <img src={`./images/productimages/${product.imagename}`} alt="" />
       <div>
         <h2>{product.productname}</h2>
         <p>Antal: {product.amount}</p>
@@ -20,32 +20,25 @@ export default function ApproveOrder(props) {
   let sum = props.basket.reduce(function (previousValue, currentValue) {
     return previousValue + currentValue.price * currentValue.amount;
   }, initialValue);
-  let totalWithDelivery = props.basket.reduce(function (
-    previousValue,
-    currentValue
-  ) {
+  let totalWithDelivery = props.basket.reduce(function (previousValue, currentValue) {
     return previousValue + currentValue.price * currentValue.amount + number;
-  },
-  initialValue);
+  }, initialValue);
   return (
     <div>
-      <div className="checkout-steps">
-        <ul>
-          <li>Indkøbskurv →</li>
-          <li>
-            <strong>Oplysninger →</strong>
-          </li>
-          <li>Levering →</li>
-
-          <li>
-            <strong>Gennemgå →</strong>
-          </li>
-          <li>Betaling </li>
-        </ul>
-      </div>
       <section className="approve-section">
+        <div className="checkout-steps">
+          <ul>
+            <li>Indkøbskurv →</li>
+            <li>Oplysninger →</li>
+            <li>Levering →</li>
+
+            <li>
+              <strong>Gennemgå →</strong>
+            </li>
+            <li>Betaling </li>
+          </ul>
+        </div>
         <h1>3. Gennemse ordre</h1>
-        <h2>Subtotal inkl. moms </h2>
         <div className="checkout-section">{mapped}</div>
         <hr />
         <div className="order-price-calc">
@@ -70,10 +63,6 @@ export default function ApproveOrder(props) {
         <hr />
         <div className="order-accept">
           <p>
-            Klik på "Jeg accpeterer" for at bekræfte, at du har læst og
-            accepteret forretningsbetingelserne.
-          </p>
-          <p>
             <strong>Klik her for at læse forretningsbetingelserne</strong>
           </p>
           <p>
@@ -82,19 +71,16 @@ export default function ApproveOrder(props) {
           <form onSubmit={handleSubmit}>
             <div className="form-control">
               <input required type="checkbox" id="accept" />
-              <label htmlFor="accept">Jeg accepterer</label>
+              <label htmlFor="accept">Klik her for at bekræfte, at du har læst og accepteret forretningsbetingelserne.</label>
             </div>
             <div className="form-control">
               <input type="checkbox" id="newsletter-sign-up" />
-              <label htmlFor="newsletter-sign-up">
-                Tilmeld mig nyhedsbrevet og giv mig besked om gode tilbud og
-                spændende nyheder.
-              </label>
+              <label htmlFor="newsletter-sign-up">Tilmeld mig nyhedsbrevet og giv mig besked om gode tilbud og spændende nyheder.</label>
             </div>
             {/* <Link to="/betaling">
               <button>→</button>
             </Link> */}
-            <button>Submit</button>
+            <button className="submit-btn">→</button>
           </form>
         </div>
       </section>
