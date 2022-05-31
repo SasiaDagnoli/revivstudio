@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Autoplay, Pagination, Navigation } from "swiper";
+import { Autoplay, Navigation } from "swiper";
 import { Link } from "react-router-dom";
 
 export default function Frontpage(props) {
@@ -46,10 +46,6 @@ export default function Frontpage(props) {
           }}
           slidesPerView={1}
           spaceBetween={30}
-          pagination={{
-            el: ".custom-pagination",
-            clickable: true,
-          }}
           grabCursor={true}
           /* autoplay={{
             delay: 2500,
@@ -59,8 +55,8 @@ export default function Frontpage(props) {
           centeredSlides={true}
           loopFillGroupWithBlank={true}
           navigation={true}
-          modules={[Autoplay, Pagination, Navigation]}
-          className="swiper"
+          modules={[Autoplay, Navigation]}
+          className="swiper swiper-frontpage"
         >
           {popularArray.map((img, i) => {
             return (
@@ -104,17 +100,13 @@ export default function Frontpage(props) {
           }}
           slidesPerView={1}
           spaceBetween={30}
-          pagination={{
-            el: ".custom-pagination",
-            clickable: true,
-          }}
           grabCursor={true}
           loop={true}
           centeredSlides={true}
           loopFillGroupWithBlank={true}
           navigation={true}
-          modules={[Pagination, Navigation]}
-          className="swiper"
+          modules={[Navigation]}
+          className="swiper swiper-frontpage"
         >
           {exploreArray.map((imgExplore, index) => {
             return (

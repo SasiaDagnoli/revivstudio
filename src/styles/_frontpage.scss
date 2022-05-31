@@ -54,6 +54,9 @@ padding-top: 2rem;
 }
 
 @media (min-width: 800px) {
+    .swiper-frontpage {
+        width: 100% !important;
+    }
     #first-section{
         background-image: url(../../public/images/background_frontpage_2.jpg);
     

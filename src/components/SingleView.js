@@ -71,12 +71,12 @@ export default function SingleView({ basket, setBasket }) {
                   alt=""
                 />
               </SwiperSlide>
-              {/*       <SwiperSlide>
-              <img
-                src={`/images/productimages/${product.thirdproductimagename}`}
-                alt=""
-              />
-            </SwiperSlide> */}
+              <SwiperSlide>
+                <img
+                  src={`/images/productimages/${product.thirdproductimagename}`}
+                  alt=""
+                />
+              </SwiperSlide>
             </Swiper>
 
             <Swiper
@@ -106,12 +106,12 @@ export default function SingleView({ basket, setBasket }) {
                   alt=""
                 />
               </SwiperSlide>
-              {/* <SwiperSlide>
-              <img
-                src={`/images/productimages/${product.thirdproductimagename}`}
-                alt=""
-              />
-            </SwiperSlide> */}
+              <SwiperSlide>
+                <img
+                  src={`/images/productimages/${product.thirdproductimagename}`}
+                  alt=""
+                />
+              </SwiperSlide>
             </Swiper>
           </section>
           <div>
