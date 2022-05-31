@@ -37,81 +37,83 @@ export default function SingleView({ basket, setBasket }) {
   return (
     <div className="product">
       {product ? (
-        <section className="single-section">
-          <Swiper
-            style={{
-              "--swiper-navigation-color": "#fff",
-              "--swiper-pagination-color": "#fff",
-            }}
-            spaceBetween={1}
-            navigation={true}
-            thumbs={{
-              swiper:
-                thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
-            }}
-            modules={[FreeMode, Navigation, Thumbs]}
-            className="mySwiper2"
-          >
-            <SwiperSlide>
-              <img
-                src={`/images/productimages/${product.imagename}`}
-                alt={product.productname}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={`/images/productimages/${product.firstproductimagename}`}
-                alt=""
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={`/images/productimages/${product.secondproductimagename}`}
-                alt=""
-              />
-            </SwiperSlide>
-            {/*       <SwiperSlide>
+        <div className="productimage-text">
+          <section className="single-section">
+            <Swiper
+              style={{
+                "--swiper-navigation-color": "#fff",
+                "--swiper-pagination-color": "#fff",
+              }}
+              spaceBetween={1}
+              navigation={true}
+              thumbs={{
+                swiper:
+                  thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
+              }}
+              modules={[FreeMode, Navigation, Thumbs]}
+              className="mySwiper2"
+            >
+              <SwiperSlide>
+                <img
+                  src={`/images/productimages/${product.imagename}`}
+                  alt={product.productname}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src={`/images/productimages/${product.firstproductimagename}`}
+                  alt=""
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src={`/images/productimages/${product.secondproductimagename}`}
+                  alt=""
+                />
+              </SwiperSlide>
+              {/*       <SwiperSlide>
               <img
                 src={`/images/productimages/${product.thirdproductimagename}`}
                 alt=""
               />
             </SwiperSlide> */}
-          </Swiper>
+            </Swiper>
 
-          <Swiper
-            onSwiper={setThumbsSwiper}
-            spaceBetween={10}
-            slidesPerView={4}
-            freeMode={true}
-            watchSlidesProgress={true}
-            modules={[FreeMode, Navigation, Thumbs]}
-            className="mySwiper"
-          >
-            <SwiperSlide>
-              <img
-                src={`/images/productimages/${product.imagename}`}
-                alt={product.productname}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={`/images/productimages/${product.firstproductimagename}`}
-                alt=""
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={`/images/productimages/${product.secondproductimagename}`}
-                alt=""
-              />
-            </SwiperSlide>
-            {/* <SwiperSlide>
+            <Swiper
+              onSwiper={setThumbsSwiper}
+              spaceBetween={10}
+              slidesPerView={4}
+              freeMode={true}
+              watchSlidesProgress={true}
+              modules={[FreeMode, Navigation, Thumbs]}
+              className="mySwiper"
+            >
+              <SwiperSlide>
+                <img
+                  src={`/images/productimages/${product.imagename}`}
+                  alt={product.productname}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src={`/images/productimages/${product.firstproductimagename}`}
+                  alt=""
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src={`/images/productimages/${product.secondproductimagename}`}
+                  alt=""
+                />
+              </SwiperSlide>
+              {/* <SwiperSlide>
               <img
                 src={`/images/productimages/${product.thirdproductimagename}`}
                 alt=""
               />
             </SwiperSlide> */}
-          </Swiper>
+            </Swiper>
+          </section>
           <div>
             <h1>{product.productname}</h1>
             <h2>Normalpris {product.price} KR.</h2>
@@ -127,7 +129,7 @@ export default function SingleView({ basket, setBasket }) {
             </p>
             <p>{product.productdescription}</p>
           </div>
-        </section>
+        </div>
       ) : (
         <section>
           <h1>Loading...</h1>
