@@ -6,7 +6,8 @@
         background-color: #c3b3ae;
         border: none;
         cursor: pointer;
-        margin-top: 0.5rem;
+        margin: 5px 5px 20px 5px;
+        font-size: 15px;
     }
 }
 
@@ -53,6 +54,9 @@ a{
     .filterbuttons {
         gap: 50px;
         margin-bottom: 40px;
+        button {
+            width: 7rem;
+        }
     }
     .shop-section{
         width: 80vw;
