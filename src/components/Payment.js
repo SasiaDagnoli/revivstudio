@@ -1,10 +1,33 @@
 import { useNavigate } from "react-router-dom";
-export default function Payment() {
+
+export default function Payment(props) {
   let navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate("/kvittering", { replace: true });
   };
+
+  if (props.paymentState === undefined) {
+    console.log("undefined");
+  } else if (props.paymentState === "mobilepay") {
+    document.querySelector("#phonenumber").setAttribute("required", "required");
+    document.querySelector("#name").removeAttribute("required");
+    document.querySelector("#cardnumber").removeAttribute("required");
+    document.querySelector("#expiry").removeAttribute("required");
+    document.querySelector("#cc").removeAttribute("required");
+  } else if (props.paymentState === "card") {
+    document.querySelector("#phonenumber").removeAttribute("required");
+    document.querySelector("#name").setAttribute("required", "required");
+    document.querySelector("#cardnumber").setAttribute("required", "required");
+    document.querySelector("#expiry").setAttribute("required", "required");
+    document.querySelector("#cc").setAttribute("required", "required");
+  } else {
+    document.querySelector("#phonenumber").removeAttribute("required");
+    document.querySelector("#name").removeAttribute("required");
+    document.querySelector("#cardnumber").removeAttribute("required");
+    document.querySelector("#expiry").removeAttribute("required");
+    document.querySelector("#cc").removeAttribute("required");
+  }
 
   return (
     <div>
@@ -30,6 +53,8 @@ export default function Payment() {
               name="paymentmethod"
               id="mobilepay"
               className="dropDown_btn_payment"
+              value="mobilepay"
+              onChange={(e) => props.setPayment(e.target.value)}
             />
             <label htmlFor="mobilepay" className="dropDown_label_payment">
               <img
@@ -49,21 +74,17 @@ export default function Payment() {
               name="paymentmethod"
               id="kort"
               className="dropDown_btn_payment"
+              value="card"
+              onChange={(e) => props.setPayment(e.target.value)}
             />
             <label htmlFor="kort">Kortbetaling</label>
             <div className="card-form paymentform">
               <label htmlFor="name" className="dropDown_label_payment">
                 Kortholders navn*
               </label>
-              <input //required
-                minLength="1"
-                autoFocus
-                type="text"
-                id="name"
-              />
+              <input minLength="1" autoFocus type="text" id="name" />
               <label htmlFor="cardnumber">Kortnummer*</label>
               <input
-                // required
                 type="tel"
                 id="cardnumber"
                 minLength="16"
@@ -75,7 +96,6 @@ export default function Payment() {
                 <div className="expiry-content">
                   <label htmlFor="expiry">Gyldig til*</label>
                   <input
-                    // required
                     type="text"
                     id="expiry"
                     pattern="([0-9]{2}+[/]+?){2}"
@@ -88,7 +108,6 @@ export default function Payment() {
                 <div className="cc-content">
                   <label htmlFor="cc">Kontrolcifre*</label>
                   <input
-                    // required
                     type="text"
                     id="cc"
                     minLength="3"

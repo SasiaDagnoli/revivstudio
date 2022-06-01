@@ -64,8 +64,13 @@ input[type=submit], .next-btn, .submit-btn{
 
 }
 
-@media (min-width: 800px){
+@media (min-width: 800px) {
     .checkout-section{
+
+        h1{
+            text-align: left;
+            padding-top: 12rem;
+        }
         width: 60vw;
 
         article{

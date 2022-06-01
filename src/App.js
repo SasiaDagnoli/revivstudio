@@ -18,6 +18,7 @@ import Receipt from "./components/Receipt";
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [paymentState, setPayment] = useState();
 
   const [basket, setBasket] = useState([]);
   const [deliveryState, setDelivery] = useState();
@@ -130,7 +131,13 @@ function App() {
               ></Route>
               <Route
                 path="betaling"
-                element={<Payment basket={basket} />}
+                element={
+                  <Payment
+                    basket={basket}
+                    paymentState={paymentState}
+                    setPayment={setPayment}
+                  />
+                }
               ></Route>
               <Route
                 path="kvittering"

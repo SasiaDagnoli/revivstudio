@@ -60,11 +60,15 @@ export default function About(props) {
             clickable: true,
           }}
           grabCursor={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
           loop={true}
           centeredSlides={true}
           loopFillGroupWithBlank={true}
           navigation={true}
-          modules={[Pagination, Navigation]}
+          modules={[Navigation, Autoplay]}
           className="swiper swiper-frontpage"
         >
           {exploreArray.map((imgExplore, index) => {

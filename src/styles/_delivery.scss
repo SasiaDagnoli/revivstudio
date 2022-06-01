@@ -17,3 +17,12 @@ h1{
     justify-content: center;
 }
 }
+
+@media (min-width: 800px) {
+    .checkout-steps{
+        padding-top: 11rem;
+        li{
+            font-size: 13px;
+        }
+    }
+}

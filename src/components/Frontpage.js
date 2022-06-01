@@ -47,10 +47,10 @@ export default function Frontpage(props) {
           slidesPerView={1}
           spaceBetween={30}
           grabCursor={true}
-          /* autoplay={{
+          autoplay={{
             delay: 2500,
             disableOnInteraction: false,
-          }} */
+          }}
           loop={true}
           centeredSlides={true}
           loopFillGroupWithBlank={true}
@@ -101,11 +101,15 @@ export default function Frontpage(props) {
           slidesPerView={1}
           spaceBetween={30}
           grabCursor={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
           loop={true}
           centeredSlides={true}
           loopFillGroupWithBlank={true}
           navigation={true}
-          modules={[Navigation]}
+          modules={[Navigation, Autoplay]}
           className="swiper swiper-frontpage"
         >
           {exploreArray.map((imgExplore, index) => {
