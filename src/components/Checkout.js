@@ -37,7 +37,9 @@ export default function Checkout(props) {
         <p>{sum} Kr.</p>
       </div>
       <Link to="/kontaktinfo">
-        <button className="next-btn">→</button>
+        <button className="next-btn">
+          <img src={`./images/pil.png`} alt="" />
+        </button>
       </Link>
     </div>
   );

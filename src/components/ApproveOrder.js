@@ -20,9 +20,13 @@ export default function ApproveOrder(props) {
   let sum = props.basket.reduce(function (previousValue, currentValue) {
     return previousValue + currentValue.price * currentValue.amount;
   }, initialValue);
-  let totalWithDelivery = props.basket.reduce(function (previousValue, currentValue) {
+  let totalWithDelivery = props.basket.reduce(function (
+    previousValue,
+    currentValue
+  ) {
     return previousValue + currentValue.price * currentValue.amount + number;
-  }, initialValue);
+  },
+  initialValue);
   return (
     <div>
       <section className="approve-section">
@@ -71,16 +75,24 @@ export default function ApproveOrder(props) {
           <form onSubmit={handleSubmit}>
             <div className="form-control">
               <input required type="checkbox" id="accept" />
-              <label htmlFor="accept">Klik her for at bekræfte, at du har læst og accepteret forretningsbetingelserne.</label>
+              <label htmlFor="accept">
+                Klik her for at bekræfte, at du har læst og accepteret
+                forretningsbetingelserne.
+              </label>
             </div>
             <div className="form-control">
               <input type="checkbox" id="newsletter-sign-up" />
-              <label htmlFor="newsletter-sign-up">Tilmeld mig nyhedsbrevet og giv mig besked om gode tilbud og spændende nyheder.</label>
+              <label htmlFor="newsletter-sign-up">
+                Tilmeld mig nyhedsbrevet og giv mig besked om gode tilbud og
+                spændende nyheder.
+              </label>
             </div>
             {/* <Link to="/betaling">
               <button>→</button>
             </Link> */}
-            <button className="submit-btn">→</button>
+            <button className="submit-btn">
+              <img src={`./images/pil.png`} alt="" />
+            </button>
           </form>
         </div>
       </section>

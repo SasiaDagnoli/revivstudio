@@ -100,7 +100,7 @@ export default function Payment() {
             </div>
           </div>
 
-          <button className="submit-btn">Gennemfør køb</button>
+          <button className="submit-btn btn-text">Gennemfør køb</button>
         </form>
       </section>
     </div>

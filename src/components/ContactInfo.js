@@ -100,7 +100,7 @@ export default function ContactInfo(props) {
           </label>
 
           <button className="submit-btn">
-            <img className="submit-btn" src={`./images/pil.png`} alt="" />
+            <img src={`./images/pil.png`} alt="" />
           </button>
         </form>
       </>

@@ -1,11 +1,24 @@
 input[type=submit], .next-btn, .submit-btn{
-    background-color: #C3B3AE;
+    /* background-color: #C3B3AE; */
+    background-color: transparent;
     border: none;
     height: auto;
     width: auto;
     padding: 9px;
     cursor: pointer;
+
+    img {
+        background-color: #C3B3AE;
+        width: 5%;
+        padding: 5px;
+        float: right;
+    }
 }
+
+.btn-text {
+    background-color: #C3B3AE;
+}
+
 .next-btn, .submit-btn {
     float: right;
 }
