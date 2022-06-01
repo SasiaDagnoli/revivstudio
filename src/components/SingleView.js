@@ -32,8 +32,6 @@ export default function SingleView({ basket, setBasket }) {
     getProduct();
   }, [params.id]);
 
-  console.log(product);
-
   return (
     <div className="product">
       {product ? (
