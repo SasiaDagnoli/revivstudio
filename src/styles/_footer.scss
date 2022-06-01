@@ -3,6 +3,13 @@ footer {
     margin-top: 6rem;
     padding-top: 3rem;
 
+    button {
+        background-color: #C3B3AE;
+        border: none;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+
     h2, p, label {
     color: #E4DAD1;
     }
@@ -31,8 +38,10 @@ footer {
     }
 
     .footer-socialmedia {
+        text-align: center;
         img {
             width: 20%;
+            
         }
     }
 
