@@ -12,10 +12,15 @@
 }
 
 .amount-counter {
+    text-align: center;
+    background-color: #C3B3AE;
+    border-radius: 50%;
+    width: 20px;
     position: fixed;
     right: 32px;
-    top: 22px;
-    z-index: 1000;
+    top: 30px;
+    z-index: 1001;
+    font-size: 15px;
 }
 .shop-section{
     display: grid;

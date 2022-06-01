@@ -74,7 +74,7 @@ function App() {
   return (
     <div className="App" id="outer-container">
       <div id="page-wrap">
-        <p className="amount-counter">{amount}</p>
+        {basket.length > 0 && <p className="amount-counter">{amount}</p>}
         <BrowserRouter>
           <Basket
             pageWrapId={"page-wrap"}
