@@ -15,7 +15,7 @@ export default function About(props) {
   return (
     <>
       <section className="about-section">
-        <h1>Om Os</h1>
+        <h1 className="left">Om Os</h1>
         <div className="about-content">
           <p>
             Réviv Studio opstod i 2020 ud fra en idé om at indsamle gamle

@@ -130,7 +130,7 @@ export default function SingleView({ basket, setBasket }) {
         </div>
       ) : (
         <section>
-          <h1>Loading...</h1>
+          <h1>Indlæser...</h1>
         </section>
       )}
     </div>

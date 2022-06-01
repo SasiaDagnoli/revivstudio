@@ -14,7 +14,7 @@ export default function Upcycling(props) {
   return (
     <div>
       <section className="upcycling-first-section">
-        <h1>Aflever dine smykker</h1>
+        <h1 className="left">Aflever dine smykker</h1>
         <div className="upcycling-content">
           <p>
             Réviv Studio skaber nye tidløse designs med materialer fra smykker,

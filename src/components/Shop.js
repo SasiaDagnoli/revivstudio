@@ -17,7 +17,6 @@ export default function Shop(props) {
 
   return (
     <div className="Shop">
-      <h1>Smykker</h1>
       {/* <FilterButtons
         filterProducts={filterProducts}
         setItem={setItem}
