@@ -48,7 +48,7 @@ export default function ContactInfo(props) {
             <input type="text" name="company" onChange={handleChange} />
           </div>
           <label>
-            Fulde navn
+            Fulde navn*
             <input
               required
               type="text"
@@ -57,7 +57,7 @@ export default function ContactInfo(props) {
             />
           </label>
           <label>
-            Adresse
+            Adresse*
             <input
               required
               type="text"
@@ -66,7 +66,7 @@ export default function ContactInfo(props) {
             />
           </label>
           <label>
-            Land
+            Land*
             <input
               required
               type="text"
@@ -75,19 +75,33 @@ export default function ContactInfo(props) {
             />
           </label>
           <label>
-            Telefon
-            <input required type="text" name="phone" onChange={handleChange} />
+            Telefon*
+            <input
+              required
+              type="text"
+              name="phone"
+              inputMode="numeric"
+              onChange={handleChange}
+            />
           </label>
           <label>
-            E-mail
-            <input required type="text" name="email" onChange={handleChange} />
+            E-mail*
+            <input
+              required
+              type="text"
+              name="email"
+              inputMode="email"
+              onChange={handleChange}
+            />
           </label>
           <label>
             Notat
             <input type="text" name="note" onChange={handleChange} />
           </label>
 
-          <button className="submit-btn">→</button>
+          <button className="submit-btn">
+            <img className="submit-btn" src={`./images/pil.png`} alt="" />
+          </button>
         </form>
       </>
     );
