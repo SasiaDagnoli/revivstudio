@@ -23,6 +23,10 @@
 
 
     .dropDown_label_address {
+        display: flex;
+        justify-content: center;
+        width: auto;
+        gap: 10px;
         p {
             text-align: center;
         }
@@ -42,6 +46,14 @@
         max-height: 1500px;
     }
 
+    .dropDown_label_address::after {
+        content: "+";
+    }
+
+    .dropDown_btn_adress:checked ~ .dropDown_label_address:after { 
+        content: "-"
+    }
+
 
     @media (min-width: 800px) {
         .upcycling-content{
@@ -52,10 +64,12 @@
         .customerjourney_web{
             margin-top: 4rem;
         }
+        .upcycling-first-section{
         .upcycling_img{
             display: block;
             width: 100%;
         }
+    }
 
         .sendjewellery-section {
             h2{

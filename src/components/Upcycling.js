@@ -194,7 +194,7 @@ export default function Upcycling(props) {
           loopFillGroupWithBlank={true}
           navigation={true}
           modules={[Pagination, Navigation]}
-          className="swiper"
+          className="swiper swiper-frontpage"
         >
           {exploreArray.map((imgExplore, index) => {
             return (
