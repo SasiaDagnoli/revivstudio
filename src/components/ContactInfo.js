@@ -1,33 +1,11 @@
-import { useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
-import Delivery from "./Delivery";
+import { useNavigate } from "react-router-dom";
 
 export default function ContactInfo(props) {
   let navigate = useNavigate();
-  /* const initialFormData = Object.freeze({
-    company: "",
-    fullname: "",
-    address: "",
-    country: "",
-    phone: "",
-    email: "",
-    note: "",
-  }); */
 
   const CustomerInformation = () => {
-    /*  const [formData, updateFormData] = useState(initialFormData); */
-    const handleChange = (e) => {
-      /* props.updateFormData((old) => ({
-        ...props.old,
-
-        [e.target.name]: e.target.value.trim(),
-      })); */
-    };
-
     const handleSubmit = (e) => {
       e.preventDefault();
-      /* console.log(e.target.elements);
-      console.log(props.formData); */
       props.updateFormData({
         company: e.target.company.value,
         fullname: e.target.fullname.value,
@@ -45,58 +23,31 @@ export default function ContactInfo(props) {
         <form onSubmit={handleSubmit}>
           <div className="form-control">
             <label>Firma</label>
-            <input type="text" name="company" onChange={handleChange} />
+            <input type="text" name="company" />
           </div>
           <label>
             Fulde navn*
-            <input
-              required
-              type="text"
-              name="fullname"
-              onChange={handleChange}
-            />
+            <input required type="text" name="fullname" />
           </label>
           <label>
             Adresse*
-            <input
-              required
-              type="text"
-              name="address"
-              onChange={handleChange}
-            />
+            <input required type="text" name="address" />
           </label>
           <label>
             Land*
-            <input
-              required
-              type="text"
-              name="country"
-              onChange={handleChange}
-            />
+            <input required type="text" name="country" />
           </label>
           <label>
             Telefon*
-            <input
-              required
-              type="text"
-              name="phone"
-              inputMode="numeric"
-              onChange={handleChange}
-            />
+            <input required type="text" name="phone" inputMode="numeric" />
           </label>
           <label>
             E-mail*
-            <input
-              required
-              type="text"
-              name="email"
-              inputMode="email"
-              onChange={handleChange}
-            />
+            <input required type="text" name="email" inputMode="email" />
           </label>
           <label>
             Notat
-            <input type="text" name="note" onChange={handleChange} />
+            <input type="text" name="note" />
           </label>
 
           <button className="submit-btn">

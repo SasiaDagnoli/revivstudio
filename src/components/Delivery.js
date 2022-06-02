@@ -81,9 +81,6 @@ export default function Delivery(props) {
                 <strong>39 Kr.</strong>
               </label>
             </div>
-            {/* <Link to="/gennemse">
-            <button>→</button>
-          </Link> */}
             <button className="submit-btn">
               <img src={`./images/pil.png`} alt="" />
             </button>

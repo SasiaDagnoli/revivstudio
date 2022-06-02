@@ -22,11 +22,6 @@ export default function Frontpage(props) {
   return (
     <div>
       <section id="first-section">
-        {/* <img
-          src={`./images/placeholder_background.jpg`}
-          alt=""
-          className="background-image"
-        /> */}
         <Link to="/shop">
           <button>Shop Nu</button>
         </Link>

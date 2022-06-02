@@ -87,9 +87,6 @@ export default function ApproveOrder(props) {
                 spændende nyheder.
               </label>
             </div>
-            {/* <Link to="/betaling">
-              <button>→</button>
-            </Link> */}
             <button className="submit-btn">
               <img src={`./images/pil.png`} alt="" />
             </button>

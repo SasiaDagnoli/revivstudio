@@ -30,7 +30,6 @@ export default (props) => {
         setBasket={props.setBasket}
       ></ProductBasket>
       <MyBasket basket={props.basket} closeSideBar={closeSideBar} />
-      {/* <RemoveFromBasket product={props.product} basket={props.basket} setBasket={props.setBasket} /> */}
     </Basket>
   );
 };

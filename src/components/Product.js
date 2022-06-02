@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import AddToBasket from "./AddToBasket";
 
 export default function Product(props) {
-  console.log("product", props);
   return (
     <article className="product">
       <Link to={`/produkt/${props.product._id}`}>

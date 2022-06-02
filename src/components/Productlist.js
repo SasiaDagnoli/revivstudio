@@ -5,7 +5,6 @@ import FilterButtons from "./FilterButtons";
 export default function Productlist(props) {
   const products = props.products;
   const [item, setItem] = useState(props.products);
-  console.log(item);
   const productsItem = [...new Set(props.products.map((val) => val.category))];
   const filterProducts = (curcat) => {
     const newItem = props.products.filter((newVal) => {
@@ -14,7 +13,6 @@ export default function Productlist(props) {
     setItem(newItem);
   };
 
-  // console.log("productlistprops", props);
   const mapped = item.map((product, index) => (
     <Product
       key={index}
@@ -24,15 +22,6 @@ export default function Productlist(props) {
       item={item}
     ></Product>
   ));
-  /*   const mapped = props.products.map((product, index) => (
-    <Product
-      key={index}
-      product={product}
-      setBasket={props.setBasket}
-      basket={props.basket}
-      item={item}
-    ></Product>
-  )); */
 
   return (
     <div>

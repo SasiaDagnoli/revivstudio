@@ -5,7 +5,7 @@ import Shop from "./components/Shop";
 import About from "./components/About";
 import Frontpage from "./components/Frontpage";
 import Upcycling from "./components/Upcycling";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Basket from "./components/Basket";
 import SingleView from "./components/SingleView";
@@ -41,8 +41,6 @@ function App() {
   const [formData, updateFormData] = useState(initialFormData);
 
   useEffect(() => {
-    console.log("GetTheData");
-
     const getTheData = async () => {
       const res = await fetch("https://revivstudio-8a0a.restdb.io/rest/shop", {
         headers: {
@@ -53,21 +51,18 @@ function App() {
       const data = await res.json();
       const popularArray = [];
       const exploreArray = [];
-      console.log("data", data);
 
       data.forEach((product) => {
         if (product.popular === true) {
           popularArray.push(product);
         }
       });
-      console.log("popular", popularArray);
 
       data.forEach((product) => {
         if (product.explore === true) {
           exploreArray.push(product);
         }
       });
-      console.log("explore", exploreArray);
       setProducts(data);
     };
     getTheData();

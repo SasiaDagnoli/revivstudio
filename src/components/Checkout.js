@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Product from "./Product";
 export default function Checkout(props) {
   const mapped = props.basket.map((product, index) => (
     <article>
