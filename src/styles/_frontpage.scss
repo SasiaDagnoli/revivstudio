@@ -53,6 +53,17 @@ padding-top: 2rem;
     }
 }
 
+.upcycling-section {
+    text-align: center;
+    button{
+        padding: 10px;
+        background-color: #c3b3ae;
+        border: none;
+        cursor: pointer;
+        margin-top: 4rem;
+    }
+}
+
 @media (min-width: 800px) {
     .swiper-frontpage {
         width: 100% !important;

@@ -84,6 +84,9 @@ export default function Frontpage(props) {
             alt=""
           />
         </div>
+        <Link to="/upcycling">
+          <button>Se hvor du kan aflevere dine smykker</button>
+        </Link>
       </section>
       <section className="explore-section">
         <h2>Gå på opdagelse</h2>

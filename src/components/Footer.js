@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <div>
@@ -18,8 +19,6 @@ export default function Footer() {
               <p>Armbånd</p>
               <p>Ringe</p>
               <p>Halskæder</p>
-              <p>Ankelkæder</p>
-              <p>Kollektioner</p>
             </div>
             <hr className="hraccordion" />
           </div>
@@ -34,7 +33,9 @@ export default function Footer() {
             </label>
             <div className="linklist">
               <p>Kundeservice</p>
-              <p>Find Boksen</p>
+              <Link to="/upcycling">
+                <p>Find Boksen</p>
+              </Link>
               <p>Find Forhandler</p>
               <p>Vilkår og Betingelser</p>
               <p>Kontakt Os</p>
@@ -54,7 +55,7 @@ export default function Footer() {
             </label>
             <div className="linklist">
               <p>
-                Tilmeld dig vores nyhedsbrev og vær den første til at blive{" "}
+                Tilmeld dig vores nyhedsbrev og vær den første til at blive
                 <br /> opdateret på nye drops, promotions og andre spændende
                 nyheder <br /> fra Réviv Studio
               </p>

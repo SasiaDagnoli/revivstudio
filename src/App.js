@@ -5,7 +5,7 @@ import Shop from "./components/Shop";
 import About from "./components/About";
 import Frontpage from "./components/Frontpage";
 import Upcycling from "./components/Upcycling";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Footer from "./components/Footer";
 import Basket from "./components/Basket";
 import SingleView from "./components/SingleView";
@@ -15,6 +15,7 @@ import Delivery from "./components/Delivery";
 import ApproveOrder from "./components/ApproveOrder";
 import Payment from "./components/Payment";
 import Receipt from "./components/Receipt";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -77,86 +78,91 @@ function App() {
       <div id="page-wrap">
         {basket.length > 0 && <p className="amount-counter">{amount}</p>}
         <BrowserRouter>
-          <Basket
-            pageWrapId={"page-wrap"}
-            outerContainerId={"outer-container"}
-            setBasket={setBasket}
-            basket={basket}
-          ></Basket>
-          <Routes>
-            <Route path="/" element={<Navigation />}>
-              <Route
-                path="shop"
-                element={
-                  <Shop
-                    products={products}
-                    setBasket={setBasket}
-                    basket={basket}
-                  />
-                }
-              />
-              <Route index element={<Frontpage products={products} />} />
-              <Route
-                path="upcycling"
-                element={<Upcycling products={products} />}
-              />
-              <Route path="om-os" element={<About products={products} />} />
-              <Route path="kurv" element={<Checkout basket={basket} />} />
-              <Route
-                path="kontaktinfo"
-                element={
-                  <ContactInfo
-                    basket={basket}
-                    formData={formData}
-                    updateFormData={updateFormData}
-                  />
-                }
-              ></Route>
-              <Route
-                path="levering"
-                element={
-                  <Delivery
-                    basket={basket}
-                    formData={formData}
-                    deliveryState={deliveryState}
-                    setDelivery={setDelivery}
-                  />
-                }
-              ></Route>
-              <Route
-                path="gennemse"
-                element={
-                  <ApproveOrder basket={basket} deliveryState={deliveryState} />
-                }
-              ></Route>
-              <Route
-                path="betaling"
-                element={
-                  <Payment
-                    basket={basket}
-                    paymentState={paymentState}
-                    setPayment={setPayment}
-                  />
-                }
-              ></Route>
-              <Route
-                path="kvittering"
-                element={
-                  <Receipt
-                    basket={basket}
-                    formData={formData}
-                    deliveryState={deliveryState}
-                  />
-                }
-              ></Route>
-              <Route
-                path="produkt/:id"
-                element={<SingleView setBasket={setBasket} basket={basket} />}
-              />
-            </Route>
-          </Routes>
+          <ScrollToTop>
+            <Basket
+              pageWrapId={"page-wrap"}
+              outerContainerId={"outer-container"}
+              setBasket={setBasket}
+              basket={basket}
+            ></Basket>
+            <Routes>
+              <Route path="/" element={<Navigation />}>
+                <Route
+                  path="shop"
+                  element={
+                    <Shop
+                      products={products}
+                      setBasket={setBasket}
+                      basket={basket}
+                    />
+                  }
+                />
+                <Route index element={<Frontpage products={products} />} />
+                <Route
+                  path="upcycling"
+                  element={<Upcycling products={products} />}
+                />
+                <Route path="om-os" element={<About products={products} />} />
+                <Route path="kurv" element={<Checkout basket={basket} />} />
+                <Route
+                  path="kontaktinfo"
+                  element={
+                    <ContactInfo
+                      basket={basket}
+                      formData={formData}
+                      updateFormData={updateFormData}
+                    />
+                  }
+                ></Route>
+                <Route
+                  path="levering"
+                  element={
+                    <Delivery
+                      basket={basket}
+                      formData={formData}
+                      deliveryState={deliveryState}
+                      setDelivery={setDelivery}
+                    />
+                  }
+                ></Route>
+                <Route
+                  path="gennemse"
+                  element={
+                    <ApproveOrder
+                      basket={basket}
+                      deliveryState={deliveryState}
+                    />
+                  }
+                ></Route>
+                <Route
+                  path="betaling"
+                  element={
+                    <Payment
+                      basket={basket}
+                      paymentState={paymentState}
+                      setPayment={setPayment}
+                    />
+                  }
+                ></Route>
+                <Route
+                  path="kvittering"
+                  element={
+                    <Receipt
+                      basket={basket}
+                      formData={formData}
+                      deliveryState={deliveryState}
+                    />
+                  }
+                ></Route>
+                <Route
+                  path="produkt/:id"
+                  element={<SingleView setBasket={setBasket} basket={basket} />}
+                />
+              </Route>
+            </Routes>
+            <Footer />
+          </ScrollToTop>
         </BrowserRouter>
-        <Footer />
       </div>
     </div>
   );

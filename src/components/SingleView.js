@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import AddToBasket from "./AddToBasket";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,6 +12,11 @@ export default function SingleView({ basket, setBasket }) {
   const params = useParams();
   const [product, setProduct] = useState(null);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  let navigate = useNavigate();
+  const handleBack = (e) => {
+    e.preventDefault();
+    navigate("/shop", { replace: true });
+  };
 
   useEffect(() => {
     async function getProduct() {
@@ -36,6 +41,9 @@ export default function SingleView({ basket, setBasket }) {
     <div className="product">
       {product ? (
         <div className="productimage-text">
+          <button className="back-btn" onClick={handleBack}>
+            Tilbage
+          </button>
           <section className="single-section">
             <Swiper
               style={{

@@ -48,10 +48,12 @@
 
     .dropDown_label_address::after {
         content: "+";
+        cursor: pointer;
     }
 
     .dropDown_btn_adress:checked ~ .dropDown_label_address:after { 
-        content: "-"
+        content: "-";
+        cursor: pointer;
     }
 
 
